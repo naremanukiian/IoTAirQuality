@@ -1,4 +1,3 @@
-/* Reset & basic styles */
 * {
   margin: 0;
   padding: 0;
@@ -24,11 +23,34 @@ header h1 {
   font-size: 2rem;
 }
 
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.overview {
+  background-color: white;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.overview h2 {
+  margin-bottom: 1rem;
+  color: #4f46e5;
+}
+
+.overview ul {
+  margin-left: 1.2rem;
+  list-style-type: disc;
+}
+
 .charts-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 2rem;
 }
 
 .chart-container {
@@ -43,3 +65,17 @@ header h1 {
   text-align: center;
   color: #4f46e5;
 }
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background-color: #e0e7ff;
+  border-top: 1px solid #ccc;
+}
+footer a {
+  color: #4f46e5;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
