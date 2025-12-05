@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IoT Air Quality Dashboard</title>
+  <title>IoT Environmental Dashboard</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -16,47 +16,39 @@
     <!-- Project Overview -->
     <section class="overview">
       <h2>Project Overview</h2>
-      <p>This project is a wireless IoT device built with an ESP32 microcontroller that periodically measures air quality and environmental conditions, sending the data to the cloud for storage and analysis.</p>
+      <p>This project is a wireless IoT device built with an ESP32 microcontroller that periodically collects air quality and environmental data from multiple sensors and sends it to a cloud API endpoint over Wi-Fi. The device operates autonomously, performing sensor initialization, data reading, validation, JSON formatting, and transmission every 10 minutes.</p>
     </section>
 
     <!-- System Overview -->
     <section class="overview">
       <h2>System Overview</h2>
       <ul>
-        <li><strong>BME280</strong> – Temperature, Humidity, Pressure, and Altitude</li>
-        <li><strong>SCD30</strong> – CO₂ Concentration</li>
-        <li><strong>SPS30</strong> – Particulate Matter (PM1.0–PM10) and Particle Counts</li>
-        <li><strong>SGP40</strong> – VOC Raw Measurement and TVOC Index</li>
+        <li><strong>BME280</strong> – Measures Temperature (°C), Humidity (%), Pressure (hPa), and Altitude (m).</li>
+        <li><strong>SCD30</strong> – Measures CO₂ concentration (ppm).</li>
+        <li><strong>SPS30</strong> – Measures Particulate Matter (PM1.0–PM10) and particle counts.</li>
+        <li><strong>SGP40</strong> – Measures VOC raw values and computes TVOC index.</li>
       </ul>
-      <p>Sensor readings are formatted in JSON and sent over Wi-Fi every 10 minutes to an AWS Lambda function, which timestamps the data (UTC+4) and stores it in S3 for centralized management.</p>
+      <p>Sensor readings are combined into JSON and sent via Wi-Fi every 10 minutes to a cloud API endpoint.</p>
     </section>
 
     <!-- Key Features -->
     <section class="overview">
       <h2>Key Features</h2>
       <ul>
-        <li>Periodic Wireless Data Collection</li>
-        <li>Multi-Sensor Integration</li>
-        <li>Cloud Storage & Centralization</li>
-        <li>Reliable Operation</li>
+        <li>Autonomous Multi-Sensor Monitoring</li>
+        <li>Reliable Wi-Fi Communication with Auto-Reconnect</li>
+        <li>Data Validation (SPS30 data verified via CRC)</li>
+        <li>Periodic Data Collection every 10 minutes</li>
+        <li>Structured JSON Payload Construction</li>
       </ul>
     </section>
 
-    <!-- Technology Stack -->
-    <section class="overview">
-      <h2>Technology Stack</h2>
-      <ul>
-        <li>Hardware: ESP32, BME280, SCD30, SPS30, SGP40</li>
-        <li>Software: Arduino IDE (C++), Python (AWS Lambda), JSON</li>
-        <li>Cloud: AWS Lambda + S3</li>
-        <li>Communication: HTTP POST over Wi-Fi</li>
-      </ul>
-    </section>
-
-    <!-- Outcome -->
-    <section class="overview">
-      <h2>Outcome</h2>
-      <p>Delivers a reliable, periodic air quality and environmental monitoring solution for indoor or outdoor spaces, suitable for smart buildings, IoT analytics, and air quality research.</p>
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card" id="tempCard">Temperature: -- °C</div>
+      <div class="card" id="pressureCard">Pressure: -- hPa</div>
+      <div class="card" id="humidityCard">Humidity: -- %</div>
+      <div class="card" id="altitudeCard">Altitude: -- m</div>
     </section>
 
     <!-- Charts Section -->
@@ -77,29 +69,15 @@
         <h2>Altitude (m)</h2>
         <canvas id="altitudeChart"></canvas>
       </div>
-      <div class="chart-container">
-        <h2>CO₂ Concentration (ppm)</h2>
-        <canvas id="co2Chart"></canvas>
-      </div>
-      <div class="chart-container">
-        <h2>Particulate Matter (PM1.0–PM10 µg/m³)</h2>
-        <canvas id="pmChart"></canvas>
-      </div>
-      <div class="chart-container">
-        <h2>VOC & TVOC Index</h2>
-        <canvas id="vocChart"></canvas>
-      </div>
     </section>
   </main>
 
   <footer>
-    <p>Developed by Nare Manukyan | 
-      <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a>
-    </p>
+    <p>Developed by Nare Manukyan | <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a></p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
