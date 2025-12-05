@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32 Sensor Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>ESP32 Sensor Dashboard</h1>
+  </header>
+
+  <section class="charts-section">
+    <div class="chart-container">
+      <h2>Temperature (°C)</h2>
+      <canvas id="temperatureChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Pressure (hPa)</h2>
+      <canvas id="pressureChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Humidity (%)</h2>
+      <canvas id="humidityChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Altitude (m)</h2>
+      <canvas id="altitudeChart"></canvas>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
