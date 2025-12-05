@@ -22,12 +22,11 @@
     <!-- System Overview -->
     <section class="overview">
       <h2>System Overview</h2>
-      <p>The ESP32 device collects data from multiple sensors:</p>
       <ul>
-        <li><strong>BME280</strong> – temperature, humidity, pressure, and altitude</li>
-        <li><strong>SCD30</strong> – CO₂ concentration</li>
-        <li><strong>SPS30</strong> – Particulate matter (PM1.0–PM10) and particle counts</li>
-        <li><strong>SGP40</strong> – VOC raw measurement and TVOC index</li>
+        <li><strong>BME280</strong> – Temperature, Humidity, Pressure, and Altitude</li>
+        <li><strong>SCD30</strong> – CO₂ Concentration</li>
+        <li><strong>SPS30</strong> – Particulate Matter (PM1.0–PM10) and Particle Counts</li>
+        <li><strong>SGP40</strong> – VOC Raw Measurement and TVOC Index</li>
       </ul>
       <p>Sensor readings are formatted in JSON and sent over Wi-Fi every 10 minutes to an AWS Lambda function, which timestamps the data (UTC+4) and stores it in S3 for centralized management.</p>
     </section>
@@ -36,10 +35,10 @@
     <section class="overview">
       <h2>Key Features</h2>
       <ul>
-        <li>Periodic Wireless Data Collection – Monitors air quality and environmental conditions automatically.</li>
-        <li>Multi-Sensor Integration – Provides comprehensive environmental data from multiple sensor types.</li>
-        <li>Cloud Storage & Centralization – AWS Lambda and S3 allow long-term storage and easy access to historical data.</li>
-        <li>Reliable Operation – Includes CRC checks, Wi-Fi reconnection, and data validation for robustness.</li>
+        <li>Periodic Wireless Data Collection</li>
+        <li>Multi-Sensor Integration</li>
+        <li>Cloud Storage & Centralization</li>
+        <li>Reliable Operation</li>
       </ul>
     </section>
 
@@ -94,7 +93,10 @@
   </main>
 
   <footer>
-    <p>Developed by Nare Manukyan | <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a></p>
+    <p>Developed by Nare Manukyan | 
+      <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a>
+    </p>
   </footer>
 
   <script src="script.js"></script>
