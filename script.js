@@ -1,4 +1,4 @@
-// Subset of historical sensor data for demonstration
+// Subset of historical sensor data for demonstration (every 10 min over 2 days)
 const sensorData = [
   { temperature: 24.15, pressure: 904.02, humidity: 28.45, altitude: 951.94, timestamp: "2025-12-05T11:37:06" },
   { temperature: 24.17, pressure: 904.06, humidity: 28.63, altitude: 951.5, timestamp: "2025-12-05T11:47:06" },
@@ -56,6 +56,7 @@ document.getElementById('tempCard').textContent = `Temperature: ${latest.tempera
 document.getElementById('pressureCard').textContent = `Pressure: ${latest.pressure} hPa`;
 document.getElementById('humidityCard').textContent = `Humidity: ${latest.humidity} %`;
 document.getElementById('altitudeCard').textContent = `Altitude: ${latest.altitude} m`;
+
 
 
 
