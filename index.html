@@ -10,93 +10,110 @@
 <body>
   <header>
     <h1>IoT Air Quality & Environmental Monitoring Device</h1>
-    <p>A multi-sensor system that captures real environmental and air-quality data with clear visual insights</p>
+    <p>A unified multi-sensor platform delivering accurate environmental and air-quality insights</p>
   </header>
 
   <main>
+
     <!-- Project Overview -->
     <section class="overview">
       <h2>Project Overview</h2>
-      <p>This project uses an ESP32-based IoT device to collect detailed environmental and air-quality measurements every 10 minutes. The device retrieves temperature, humidity, pressure, altitude, CO₂ concentration, particulate matter (PM1.0–PM10), particle count distributions, VOC levels, and raw gas sensor values. All measurements are packaged into a structured JSON payload and sent to a cloud API endpoint for storage and visualization.</p>
-      <p>The charts below display a small sample extracted from a two-day dataset. These charts are not real-time; they are shown to demonstrate how the collected data can be used to observe environmental patterns, trends, and anomalies.</p>
+      <p>
+        This project was developed as part of the ClimateNet program, featuring an ESP32-based IoT device equipped with multiple environmental and air-quality sensors. 
+        My main contribution was integrating all the sensor modules—BME280, SCD30, SPS30, and SGP40—into a single operational workflow, ensuring synchronized data collection and successful API communication.
+      </p>
+      <p>
+        The device records sensor data every 10 minutes and packages more than 20 parameters into a structured JSON payload before sending it to a cloud API for storage. 
+        The charts below represent a small extracted portion from a two-day dataset and demonstrate how collected values can be visualized for analysis.
+      </p>
     </section>
 
     <!-- System Overview -->
     <section class="overview">
       <h2>System Overview</h2>
-      <p>The ESP32 collects the following measurements on each cycle:</p>
+      <p>The ESP32 collects the following measurements during each cycle:</p>
       <ul>
-        <li><strong>Temperature (°C)</strong> – Measures the ambient air temperature.</li>
-        <li><strong>Humidity (%)</strong> – Indicates the moisture level in the air.</li>
-        <li><strong>Pressure (hPa)</strong> – Atmospheric pressure measurement.</li>
-        <li><strong>Altitude (m)</strong> – Estimated altitude calculated from pressure changes.</li>
-        <li><strong>CO₂ (ppm)</strong> – Carbon dioxide concentration in parts per million.</li>
-        <li><strong>Particulate Matter (PM1.0, PM2.5, PM4.0, PM10)</strong>  – Levels of airborne particles of different sizes.</li>
-        <li><strong>Particle Count (NC0.5, NC1.0, NC2.5, NC4.0, NC10)</strong> – Number of particles per cubic centimeter for each size range.</li>
+        <li><strong>Temperature (°C)</strong> – Ambient air temperature.</li>
+        <li><strong>Humidity (%)</strong> – Relative moisture content.</li>
+        <li><strong>Pressure (hPa)</strong> – Atmospheric pressure levels.</li>
+        <li><strong>Altitude (m)</strong> – Calculated using pressure variations.</li>
+        <li><strong>CO₂ (ppm)</strong> – Carbon dioxide concentration.</li>
+        <li><strong>Particulate Matter</strong> (PM1.0, PM2.5, PM4.0, PM10).</li>
+        <li><strong>Particle Count</strong> (NC0.5, NC1.0, NC2.5, NC4.0, NC10).</li>
         <li><strong>Typical Particle Size</strong> – Average detected particle diameter.</li>
-        <li><strong>Raw VOC Value (SGP40)</strong> – Unprocessed gas sensor output representing volatile organic compounds.</li>
-        <li><strong>TVOC Index</strong> – Simplified total VOC air-quality index (0–500).</li>
-        <li><strong>Timestamp</strong> – The exact date and time of the measurement.</li>
-        <li><strong>Device ID</strong> – Identifier for the ESP32 device sending the data.</li>
+        <li><strong>Raw VOC Signal (SGP40)</strong> – Gas sensor output.</li>
+        <li><strong>TVOC Index</strong> – Total volatile organic compound index.</li>
+        <li><strong>Timestamp</strong> – Exact measurement time.</li>
+        <li><strong>Device ID</strong> – ESP32 identifier.</li>
       </ul>
-      <p>Together, these metrics create a complete snapshot of both environmental conditions and air cleanliness at each measurement moment.</p>
+      <p>
+        Combined, these readings create a complete snapshot of environmental changes and air-quality conditions for each recorded moment.
+      </p>
     </section>
 
     <!-- Key Features -->
     <section class="overview">
       <h2>Key Features</h2>
       <ul>
-        <li><strong>Rich Environmental Data:</strong> More than 20 measurements collected every cycle.</li>
-        <li><strong>Unified JSON Payload:</strong> All sensor values sent together in one structured package.</li>
-        <li><strong>Automatic Wi-Fi Handling:</strong> The ESP32 reconnects automatically if Wi-Fi drops.</li>
-        <li><strong>Accurate Air-Quality Insights:</strong> PM levels, CO₂ trends, VOC index, and particle distribution.</li>
-        <li><strong>Visualization Ready:</strong> Data formatted for dashboards and analytics tools.</li>
+        <li><strong>Unified Sensor Integration:</strong> Four different sensors combined into a single operational system.</li>
+        <li><strong>Structured JSON Output:</strong> Over 20 sensor parameters included per measurement.</li>
+        <li><strong>Wi-Fi Auto-Recovery:</strong> Automatic reconnection ensures stable data delivery.</li>
+        <li><strong>Comprehensive Air-Quality Insight:</strong> Includes CO₂, particulate matter, VOCs, humidity, and more.</li>
+        <li><strong>Dashboard-Ready Data:</strong> Ideal for charts, analytics models, and real-time monitoring.</li>
       </ul>
     </section>
 
     <!-- Technology Stack -->
     <section class="overview">
       <h2>Technology Stack</h2>
-      <p>The system is built using reliable IoT hardware and lightweight, efficient software:</p>
+      <p>The system is powered by robust IoT hardware and lightweight software:</p>
       <ul>
         <li><strong>Hardware:</strong> ESP32, BME280, SCD30, SPS30, SGP40</li>
-        <li><strong>Software:</strong> Arduino C++, sensor libraries, JSON formatting</li>
+        <li><strong>Software:</strong> Arduino C++, sensor libraries, JSON handling</li>
         <li><strong>Networking:</strong> Wi-Fi + HTTP POST to a cloud API</li>
-        <li><strong>Data:</strong> Timestamped JSON entries with 20+ parameters</li>
+        <li><strong>Data Format:</strong> Timestamped JSON entries with 20+ recorded fields</li>
       </ul>
     </section>
 
     <!-- Outcome -->
     <section class="overview">
       <h2>Outcome</h2>
-      <p>This project delivers a complete environmental monitoring solution capable of analyzing temperature, humidity, pressure, altitude, CO₂ buildup, particulate pollution, VOC levels, and particle size distributions. Even a short dataset provides meaningful insights about indoor or outdoor air quality.</p>
-      <p>The system serves as a strong foundation for advanced dashboards, prediction models, and real-time IoT monitoring platforms with alerts, mapping, and long-term analytics.</p>
+      <p>
+        This IoT system provides a complete environmental monitoring solution, capable of capturing detailed patterns in temperature, humidity, pressure, altitude, particulate matter, CO₂, and VOC levels. 
+      </p>
+      <p>
+        The collected data forms the foundation for advanced dashboards, predictive analytics, alert systems, and future real-time monitoring tools.
+      </p>
     </section>
 
-    <!-- Charts Section -->
+    <!-- Charts -->
     <section class="charts-section">
       <div class="chart-container">
         <h2>Temperature (°C)</h2>
         <canvas id="temperatureChart"></canvas>
       </div>
+
       <div class="chart-container">
         <h2>Pressure (hPa)</h2>
         <canvas id="pressureChart"></canvas>
       </div>
+
       <div class="chart-container">
         <h2>Humidity (%)</h2>
         <canvas id="humidityChart"></canvas>
       </div>
+
       <div class="chart-container">
         <h2>Altitude (m)</h2>
         <canvas id="altitudeChart"></canvas>
       </div>
     </section>
+
   </main>
 
   <footer>
-    <p>Developed by Nare Manukyan | 
-      <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | 
+    <p>Developed by Nare Manukyan |
+      <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> |
       <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a>
     </p>
   </footer>
