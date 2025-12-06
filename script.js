@@ -1,4 +1,3 @@
-// Sample sensor data for demonstration
 const sensorData = [
   { temperature: 24.15, pressure: 904.02, humidity: 28.45, altitude: 951.94, timestamp: "2025-12-05T11:37:06" },
   { temperature: 24.17, pressure: 904.06, humidity: 28.63, altitude: 951.5, timestamp: "2025-12-05T11:47:06" },
@@ -15,33 +14,15 @@ const pressure = sensorData.map(d => d.pressure);
 const humidity = sensorData.map(d => d.humidity);
 const altitude = sensorData.map(d => d.altitude);
 
-// Function to create charts
+// Chart function
 function createChart(ctx, label, data, color) {
   return new Chart(ctx, {
     type: 'line',
-    data: {
-      labels: timestamps,
-      datasets: [{
-        label: label,
-        data: data,
-        borderColor: color,
-        backgroundColor: color + '33',
-        fill: true,
-        tension: 0.4,
-        pointRadius: 4,
-        pointHoverRadius: 6
-      }]
-    },
+    data: { labels: timestamps, datasets: [{ label, data, borderColor: color, backgroundColor: color + '33', fill: true, tension: 0.4, pointRadius: 4, pointHoverRadius: 6 }] },
     options: {
       responsive: true,
-      plugins: {
-        legend: { display: true, position: 'top' },
-        tooltip: { mode: 'index', intersect: false }
-      },
-      scales: {
-        x: { display: true, title: { display: true, text: 'Time' } },
-        y: { display: true, title: { display: true, text: label } }
-      }
+      plugins: { legend: { display: true, position: 'top' }, tooltip: { mode: 'index', intersect: false } },
+      scales: { x: { title: { display: true, text: 'Time' } }, y: { title: { display: true, text: label } } }
     }
   });
 }
@@ -52,12 +33,13 @@ createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure
 createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#4CAF50');
 createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFC107');
 
-// Update latest readings in cards
+// Update latest readings
 const latest = sensorData[sensorData.length - 1];
 document.getElementById('tempCard').textContent = `Temperature: ${latest.temperature} °C`;
 document.getElementById('pressureCard').textContent = `Pressure: ${latest.pressure} hPa`;
 document.getElementById('humidityCard').textContent = `Humidity: ${latest.humidity} %`;
 document.getElementById('altitudeCard').textContent = `Altitude: ${latest.altitude} m`;
+
 
 
 
