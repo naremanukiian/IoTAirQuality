@@ -13,21 +13,29 @@
   </header>
 
   <main>
+    <!-- Latest Readings Cards -->
+    <section class="summary-cards">
+      <div class="card" id="tempCard">Temperature</div>
+      <div class="card" id="pressureCard">Pressure</div>
+      <div class="card" id="humidityCard">Humidity</div>
+      <div class="card" id="altitudeCard">Altitude</div>
+    </section>
+
     <!-- Project Overview -->
     <section class="overview">
       <h2>Project Overview</h2>
       <p>This project is a wireless IoT device built with an ESP32 microcontroller that collects air quality and environmental data from multiple sensors and sends it to a cloud API endpoint over Wi-Fi every 10 minutes.</p>
-      <p>Data was collected continuously for 2 days, and the charts shown here only display a small portion of the dataset for demonstration and understanding purposes.</p>
+      <p>Data was collected continuously for 2 days, and the charts shown here display a sample of the dataset for demonstration purposes.</p>
     </section>
 
     <!-- System Overview -->
     <section class="overview">
       <h2>System Overview</h2>
       <ul>
-        <li><strong>BME280:</strong> Measures Temperature, Humidity, Pressure, and Altitude</li>
-        <li><strong>SCD30:</strong> Measures CO₂ concentration</li>
-        <li><strong>SPS30:</strong> Measures Particulate Matter (PM1.0–PM10) and particle counts</li>
-        <li><strong>SGP40:</strong> Measures VOC raw values and computes TVOC index</li>
+        <li><strong>BME280:</strong> Temperature, Humidity, Pressure, Altitude</li>
+        <li><strong>SCD30:</strong> CO₂ concentration</li>
+        <li><strong>SPS30:</strong> Particulate Matter (PM1.0–PM10)</li>
+        <li><strong>SGP40:</strong> VOC raw values & TVOC index</li>
       </ul>
     </section>
 
@@ -35,10 +43,10 @@
     <section class="overview">
       <h2>Key Features</h2>
       <ul>
-        <li>Periodic Data Collection: Captures readings from multiple sensors every 10 minutes</li>
-        <li>Multi-Sensor Integration: Combines environmental and air quality measurements into a single JSON payload</li>
-        <li>Wi-Fi Communication: Sends data to a cloud API endpoint and reconnects automatically if disconnected</li>
-        <li>Data Validation: Flags invalid sensor readings</li>
+        <li>Periodic Data Collection every 10 minutes</li>
+        <li>Multi-Sensor Integration into a single JSON payload</li>
+        <li>Wi-Fi Communication with automatic reconnect</li>
+        <li>Data Validation for reliable readings</li>
       </ul>
     </section>
 
@@ -55,7 +63,7 @@
     <!-- Outcome -->
     <section class="overview">
       <h2>Outcome</h2>
-      <p>The device provides a reliable and autonomous solution for monitoring air quality and environmental conditions. The charts presented are illustrative, showing only a small part of the 2-day data collection to help understand trends.</p>
+      <p>The device provides a reliable, autonomous solution for monitoring air quality. Charts illustrate a sample of 2-day data to understand trends.</p>
     </section>
 
     <!-- Charts Section -->
@@ -80,12 +88,16 @@
   </main>
 
   <footer>
-    <p>Developed by Nare Manukyan | <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a></p>
+    <p>Developed by Nare Manukyan | 
+      <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a>
+    </p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
