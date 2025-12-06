@@ -6,17 +6,17 @@
 }
 
 body {
-  background-color: #f4f7fa;
+  background-color: #f0f4f8;
   color: #333;
   line-height: 1.6;
 }
 
 header {
-  background-color: #4f46e5;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
 
 header h1 {
@@ -29,12 +29,39 @@ main {
   padding: 2rem;
 }
 
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4f46e5;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Overview Sections */
 .overview {
-  background-color: white;
-  padding: 1.5rem;
+  background: white;
+  padding: 1.8rem;
   margin-bottom: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
 }
 
 .overview h2 {
@@ -47,24 +74,11 @@ main {
   list-style-type: disc;
 }
 
-.summary-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
+.overview:hover {
+  transform: translateY(-3px);
 }
 
-.card {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #4f46e5;
-}
-
+/* Charts */
 .charts-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -72,10 +86,10 @@ main {
 }
 
 .chart-container {
-  background-color: white;
+  background: white;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
 .chart-container h2 {
@@ -84,9 +98,10 @@ main {
   color: #4f46e5;
 }
 
+/* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 1.2rem;
   margin-top: 2rem;
   background-color: #e0e7ff;
   border-top: 1px solid #ccc;
@@ -96,6 +111,23 @@ footer a {
   color: #4f46e5;
   text-decoration: none;
   margin: 0 0.5rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .overview {
+    padding: 1.2rem;
+  }
+  .chart-container {
+    padding: 1rem;
+  }
 }
 
 
