@@ -19,14 +19,10 @@ header {
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
 
-header h1 {
-  font-size: 2rem;
-}
-
-main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+header p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 /* Summary Cards */
@@ -34,18 +30,15 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
 .card {
   background: white;
-  padding: 1.2rem;
+  padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   text-align: center;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #4f46e5;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -54,6 +47,28 @@ main {
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
+.card .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card .value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.card .description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Color coding */
+.temp { border-top: 4px solid #FF5722; }
+.pressure { border-top: 4px solid #3F51B5; }
+.humidity { border-top: 4px solid #4CAF50; }
+.altitude { border-top: 4px solid #FFC107; }
+
 /* Overview Sections */
 .overview {
   background: white;
@@ -61,7 +76,6 @@ main {
   margin-bottom: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
 }
 
 .overview h2 {
@@ -72,10 +86,6 @@ main {
 .overview ul {
   margin-left: 1.2rem;
   list-style-type: disc;
-}
-
-.overview:hover {
-  transform: translateY(-3px);
 }
 
 /* Charts */
@@ -115,19 +125,6 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-}
-
-/* Responsive Typography */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-  .overview {
-    padding: 1.2rem;
-  }
-  .chart-container {
-    padding: 1rem;
-  }
 }
 
 
