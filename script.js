@@ -7,29 +7,66 @@ const sensorData = [
   { temperature: 24.35, pressure: 904.07, humidity: 28.64, altitude: 951.46, timestamp: "2025-12-05T12:27:06" }
 ];
 
-const timestamps = sensorData.map(d => new Date(d.timestamp).toLocaleTimeString());
+// Convert timestamps to HH:MM
+const timestamps = sensorData.map(d => {
+  const date = new Date(d.timestamp);
+  return `${date.getHours()}:${String(date.getMinutes()).padStart(2,'0')}`;
+});
+
 const temperature = sensorData.map(d => d.temperature);
 const pressure = sensorData.map(d => d.pressure);
 const humidity = sensorData.map(d => d.humidity);
 const altitude = sensorData.map(d => d.altitude);
 
+// Chart creation function with gradient
 function createChart(ctx, label, data, color) {
+  const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
+  gradient.addColorStop(0, color + '88');
+  gradient.addColorStop(1, color + '11');
+
   return new Chart(ctx, {
     type: 'line',
-    data: { labels: timestamps, datasets: [{ label, data, borderColor: color, backgroundColor: color + '33', fill: true, tension: 0.4 }] },
+    data: {
+      labels: timestamps,
+      datasets: [{
+        label: label,
+        data: data,
+        borderColor: color,
+        backgroundColor: gradient,
+        fill: true,
+        tension: 0.4,
+        pointRadius: 5,
+        pointHoverRadius: 7
+      }]
+    },
     options: {
       responsive: true,
-      plugins: { legend: { display: true, position: 'top' }, tooltip: { mode: 'index', intersect: false } },
-      scales: { x: { title: { display: true, text: 'Time' } }, y: { title: { display: true, text: label } } }
+      plugins: {
+        legend: { display: true, position: 'top', labels: { font: { size: 14 } } },
+        tooltip: {
+          mode: 'index',
+          intersect: false,
+          backgroundColor: '#333',
+          titleColor: '#fff',
+          bodyColor: '#fff',
+          titleFont: { weight: 'bold' }
+        }
+      },
+      scales: {
+        x: { display: true, title: { display: true, text: 'Time (HH:MM)' }, grid: { color: '#eee' } },
+        y: { display: true, title: { display: true, text: label }, grid: { color: '#eee' } }
+      }
     }
   });
 }
 
-// Create charts
+// Initialize all charts
 createChart(document.getElementById('temperatureChart'), 'Temperature (°C)', temperature, '#FF5722');
 createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure, '#3F51B5');
 createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#4CAF50');
 createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFC107');
+
+
 
 
 
