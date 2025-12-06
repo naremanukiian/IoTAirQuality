@@ -10,24 +10,26 @@
 <body>
   <header>
     <h1>IoT Air Quality & Environmental Monitoring Device</h1>
+    <p>Monitor your environment in real-time with easy-to-understand charts and actionable insights</p>
   </header>
 
   <main>
     <!-- Project Overview -->
     <section class="overview">
       <h2>Project Overview</h2>
-      <p>This wireless IoT device is built around an ESP32 microcontroller. It periodically collects air quality and environmental data from multiple sensors, formats the readings into a JSON payload, and sends it to a cloud API endpoint every 10 minutes over Wi-Fi.</p>
-      <p>Data was collected continuously for 2 days. The charts below represent only a small portion of the dataset for visualization purposes. They are not real-time.</p>
+      <p>This project focuses on developing a wireless IoT device using an ESP32 microcontroller to monitor air quality and environmental parameters in real-time. The device integrates multiple sensors to measure temperature, humidity, pressure, altitude, CO₂ levels, particulate matter, and VOC indexes. The collected data is sent every 10 minutes to a cloud API for storage and analysis.</p>
+      <p>For demonstration purposes, the charts below show a small sample of the two-day dataset. This allows users to visualize environmental trends and gain insights without overwhelming them with raw data.</p>
     </section>
 
     <!-- System Overview -->
     <section class="overview">
       <h2>System Overview</h2>
+      <p>The system combines several sensors to capture a comprehensive view of air quality and environmental conditions:</p>
       <ul>
-        <li><strong>BME280:</strong> Temperature, Humidity, Pressure, Altitude</li>
-        <li><strong>SCD30:</strong> CO₂ concentration</li>
-        <li><strong>SPS30:</strong> PM1.0, PM2.5, PM4.0, PM10, NC0.5, NC1.0, NC2.5, NC4.0, NC10, Typical particle size</li>
-        <li><strong>SGP40:</strong> VOC raw values, TVOC index</li>
+        <li><strong>BME280:</strong> Measures temperature, humidity, pressure, and altitude, providing fundamental environmental metrics.</li>
+        <li><strong>SCD30:</strong> Measures CO₂ concentration in ppm, helping detect air quality and ventilation efficiency.</li>
+        <li><strong>SPS30:</strong> Measures particulate matter from PM1.0 to PM10, tracking pollution levels in the air.</li>
+        <li><strong>SGP40:</strong> Measures volatile organic compounds (VOC) and computes TVOC index for air quality monitoring.</li>
       </ul>
     </section>
 
@@ -35,27 +37,30 @@
     <section class="overview">
       <h2>Key Features</h2>
       <ul>
-        <li>Periodic data collection every 10 minutes</li>
-        <li>Multi-sensor integration into a single JSON payload</li>
-        <li>Reliable Wi-Fi communication with auto reconnect</li>
-        <li>Data validation and error handling for accurate readings</li>
+        <li><strong>Periodic Data Collection:</strong> Captures accurate readings from multiple sensors every 10 minutes.</li>
+        <li><strong>Multi-Sensor Integration:</strong> Combines all sensor readings into a single JSON payload for efficient processing.</li>
+        <li><strong>Wi-Fi Communication:</strong> Sends data to a cloud API endpoint with automatic reconnection if the device is disconnected.</li>
+        <li><strong>Data Validation:</strong> Checks sensor readings for inconsistencies, ensuring reliable information for analysis.</li>
+        <li><strong>Visualization Ready:</strong> Data is structured to easily generate interactive charts and dashboards.</li>
       </ul>
     </section>
 
     <!-- Technology Stack -->
     <section class="overview">
       <h2>Technology Stack</h2>
+      <p>This project leverages modern hardware and software tools to ensure accuracy, scalability, and easy maintenance:</p>
       <ul>
-        <li>Hardware: ESP32, BME280, SCD30, SPS30, SGP40</li>
-        <li>Software: Arduino IDE (C++), JSON formatting</li>
-        <li>Communication: HTTP POST over Wi-Fi to cloud API endpoint</li>
+        <li><strong>Hardware:</strong> ESP32 microcontroller, BME280, SCD30, SPS30, SGP40 sensors</li>
+        <li><strong>Software:</strong> Arduino IDE (C++), JSON formatting for structured data exchange</li>
+        <li><strong>Communication:</strong> HTTP POST requests over Wi-Fi for seamless data transmission to cloud endpoints</li>
       </ul>
     </section>
 
     <!-- Outcome -->
     <section class="overview">
       <h2>Outcome</h2>
-      <p>This device provides a reliable and autonomous solution for monitoring air quality and environmental conditions. The charts display a small portion of the 2-day dataset to illustrate trends in sensor outputs.</p>
+      <p>The device provides a reliable, autonomous solution for monitoring indoor and outdoor environmental conditions. Users can track trends in temperature, humidity, air pressure, altitude, CO₂ levels, and particulate matter. The charts demonstrate how even a small dataset can reveal patterns and help make informed decisions about ventilation, air purification, or other environmental adjustments.</p>
+      <p>This project serves as a foundation for building larger-scale environmental monitoring systems, integrating IoT data collection with cloud storage, analysis, and visualization tools.</p>
     </section>
 
     <!-- Charts Section -->
@@ -89,6 +94,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
