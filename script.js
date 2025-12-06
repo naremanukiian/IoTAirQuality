@@ -7,18 +7,16 @@ const sensorData = [
   { temperature: 24.35, pressure: 904.07, humidity: 28.64, altitude: 951.46, timestamp: "2025-12-05T12:27:06" }
 ];
 
-// Extract data
 const timestamps = sensorData.map(d => new Date(d.timestamp).toLocaleTimeString());
 const temperature = sensorData.map(d => d.temperature);
 const pressure = sensorData.map(d => d.pressure);
 const humidity = sensorData.map(d => d.humidity);
 const altitude = sensorData.map(d => d.altitude);
 
-// Chart function
 function createChart(ctx, label, data, color) {
   return new Chart(ctx, {
     type: 'line',
-    data: { labels: timestamps, datasets: [{ label, data, borderColor: color, backgroundColor: color + '33', fill: true, tension: 0.4, pointRadius: 4, pointHoverRadius: 6 }] },
+    data: { labels: timestamps, datasets: [{ label, data, borderColor: color, backgroundColor: color + '33', fill: true, tension: 0.4 }] },
     options: {
       responsive: true,
       plugins: { legend: { display: true, position: 'top' }, tooltip: { mode: 'index', intersect: false } },
@@ -27,18 +25,12 @@ function createChart(ctx, label, data, color) {
   });
 }
 
-// Initialize charts
+// Create charts
 createChart(document.getElementById('temperatureChart'), 'Temperature (°C)', temperature, '#FF5722');
 createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure, '#3F51B5');
 createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#4CAF50');
 createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFC107');
 
-// Update latest readings
-const latest = sensorData[sensorData.length - 1];
-document.getElementById('tempCard').textContent = `Temperature: ${latest.temperature} °C`;
-document.getElementById('pressureCard').textContent = `Pressure: ${latest.pressure} hPa`;
-document.getElementById('humidityCard').textContent = `Humidity: ${latest.humidity} %`;
-document.getElementById('altitudeCard').textContent = `Altitude: ${latest.altitude} m`;
 
 
 
