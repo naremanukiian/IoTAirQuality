@@ -10,7 +10,7 @@ const sensorData = [
 // Convert timestamps to HH:MM
 const timestamps = sensorData.map(d => {
   const date = new Date(d.timestamp);
-  return `${date.getHours()}:${String(date.getMinutes()).padStart(2,'0')}`;
+  return `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
 });
 
 const temperature = sensorData.map(d => d.temperature);
@@ -18,7 +18,7 @@ const pressure = sensorData.map(d => d.pressure);
 const humidity = sensorData.map(d => d.humidity);
 const altitude = sensorData.map(d => d.altitude);
 
-// Chart creation function with gradient
+// Chart creation
 function createChart(ctx, label, data, color) {
   const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
   gradient.addColorStop(0, color + '88');
@@ -42,29 +42,26 @@ function createChart(ctx, label, data, color) {
     options: {
       responsive: true,
       plugins: {
-        legend: { display: true, position: 'top', labels: { font: { size: 14 } } },
+        legend: { display: true, position: 'top' },
         tooltip: {
-          mode: 'index',
-          intersect: false,
           backgroundColor: '#333',
           titleColor: '#fff',
-          bodyColor: '#fff',
-          titleFont: { weight: 'bold' }
+          bodyColor: '#fff'
         }
       },
       scales: {
-        x: { display: true, title: { display: true, text: 'Time (HH:MM)' }, grid: { color: '#eee' } },
-        y: { display: true, title: { display: true, text: label }, grid: { color: '#eee' } }
+        x: { title: { display: true, text: 'Time (HH:MM)' } },
+        y: { title: { display: true, text: label } }
       }
     }
   });
 }
 
-// Initialize all charts
 createChart(document.getElementById('temperatureChart'), 'Temperature (°C)', temperature, '#FF5722');
 createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure, '#3F51B5');
 createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#4CAF50');
 createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFC107');
+
 
 
 
