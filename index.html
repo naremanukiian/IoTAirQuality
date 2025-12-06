@@ -26,20 +26,20 @@
       <h2>System Overview</h2>
       <p>The ESP32 collects the following measurements on each cycle:</p>
       <ul>
-        <li><strong>Temperature (°C)</strong> – Ambient temperature</li>
-        <li><strong>Humidity (%)</strong> – Air moisture level</li>
-        <li><strong>Pressure (hPa)</strong> – Atmospheric pressure</li>
-        <li><strong>Altitude (m)</strong> – Calculated from pressure</li>
-        <li><strong>CO₂ (ppm)</strong> – Carbon dioxide concentration</li>
-        <li><strong>Particulate Matter:</strong> PM1.0, PM2.5, PM4.0, PM10</li>
-        <li><strong>Particle Count (NC):</strong> NC0.5, NC1.0, NC2.5, NC4.0, NC10</li>
-        <li><strong>Typical Particle Size</strong> – Average particle diameter</li>
-        <li><strong>Raw VOC Value (SGP40)</strong> – Unprocessed gas sensor signal</li>
-        <li><strong>TVOC Index</strong> – VOC-based air quality index from 0–500</li>
-        <li><strong>Timestamp</strong> – Exact measurement time</li>
-        <li><strong>Device ID</strong> – ESP32 identifier</li>
+        <li><strong>Temperature (°C)</strong> – Measures the ambient air temperature.</li>
+        <li><strong>Humidity (%)</strong> – Indicates the moisture level in the air.</li>
+        <li><strong>Pressure (hPa)</strong> – Atmospheric pressure measurement.</li>
+        <li><strong>Altitude (m)</strong> – Estimated altitude calculated from pressure changes.</li>
+        <li><strong>CO₂ (ppm)</strong> – Carbon dioxide concentration in parts per million.</li>
+        <li><strong>Particulate Matter:</strong> PM1.0, PM2.5, PM4.0, PM10 – Levels of airborne particles of different sizes.</li>
+        <li><strong>Particle Count (NC):</strong> NC0.5, NC1.0, NC2.5, NC4.0, NC10 – Number of particles per cubic centimeter for each size range.</li>
+        <li><strong>Typical Particle Size</strong> – Average detected particle diameter.</li>
+        <li><strong>Raw VOC Value (SGP40)</strong> – Unprocessed gas sensor output representing volatile organic compounds.</li>
+        <li><strong>TVOC Index</strong> – Simplified total VOC air-quality index (0–500).</li>
+        <li><strong>Timestamp</strong> – The exact date and time of the measurement.</li>
+        <li><strong>Device ID</strong> – Identifier for the ESP32 device sending the data.</li>
       </ul>
-      <p>Together, these metrics form a complete snapshot of both environmental conditions and air cleanliness at each measurement moment.</p>
+      <p>Together, these metrics create a complete snapshot of both environmental conditions and air cleanliness at each measurement moment.</p>
     </section>
 
     <!-- Key Features -->
@@ -47,10 +47,10 @@
       <h2>Key Features</h2>
       <ul>
         <li><strong>Rich Environmental Data:</strong> More than 20 measurements collected every cycle.</li>
-        <li><strong>Unified JSON Payload:</strong> All sensor values are synchronized and sent in one structured data package.</li>
-        <li><strong>Automatic Wi-Fi Handling:</strong> Reconnects independently if the device loses connection.</li>
-        <li><strong>Accurate Air-Quality Insights:</strong> PM, CO₂, VOC index, and particle size analysis.</li>
-        <li><strong>Visualization Ready:</strong> Data is aligned for charts, dashboards, and future analytics.</li>
+        <li><strong>Unified JSON Payload:</strong> All sensor values sent together in one structured package.</li>
+        <li><strong>Automatic Wi-Fi Handling:</strong> The ESP32 reconnects automatically if Wi-Fi drops.</li>
+        <li><strong>Accurate Air-Quality Insights:</strong> PM levels, CO₂ trends, VOC index, and particle distribution.</li>
+        <li><strong>Visualization Ready:</strong> Data formatted for dashboards and analytics tools.</li>
       </ul>
     </section>
 
@@ -70,7 +70,7 @@
     <section class="overview">
       <h2>Outcome</h2>
       <p>This project delivers a complete environmental monitoring solution capable of analyzing temperature, humidity, pressure, altitude, CO₂ buildup, particulate pollution, VOC levels, and particle size distributions. Even a short dataset provides meaningful insights about indoor or outdoor air quality.</p>
-      <p>The system serves as a strong foundation for more advanced dashboards, prediction models, and large-scale IoT monitoring platforms integrating real-time alerts, mapping, and long-term analytics.</p>
+      <p>The system serves as a strong foundation for advanced dashboards, prediction models, and real-time IoT monitoring platforms with alerts, mapping, and long-term analytics.</p>
     </section>
 
     <!-- Charts Section -->
@@ -104,6 +104,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
