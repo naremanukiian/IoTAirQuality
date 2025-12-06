@@ -6,21 +6,24 @@
 }
 
 body {
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
   color: #333;
   line-height: 1.6;
 }
 
 header {
-  background-color: #4f46e5;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
   color: white;
-  padding: 1.5rem 2rem;
+  padding: 2rem;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
-header h1 {
-  font-size: 2rem;
+header p {
+  margin-top: 0.5rem;
+  font-weight: 400;
 }
 
 main {
@@ -31,11 +34,11 @@ main {
 
 /* Sections */
 .overview {
-  background-color: white;
-  padding: 1.8rem;
+  background: #ffffffdd;
+  padding: 2rem;
   margin-bottom: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 .overview h2 {
@@ -57,10 +60,15 @@ main {
 }
 
 .chart-container {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
 }
 
 .chart-container h2 {
@@ -73,8 +81,9 @@ main {
 footer {
   text-align: center;
   padding: 1.5rem 0;
-  margin-top: 2rem;
+  margin-top: 3rem;
   background-color: #e0e7ff;
+  border-top: 1px solid #ccc;
 }
 
 footer a {
@@ -83,12 +92,11 @@ footer a {
   margin: 0 0.5rem;
 }
 
-/* Responsive for smaller screens */
+/* Responsive */
 @media (max-width: 900px) {
-  .charts-section {
-    grid-template-columns: 1fr;
-  }
+  .charts-section { grid-template-columns: 1fr; }
 }
+
 
 
 
