@@ -9,64 +9,54 @@
 </head>
 <body>
   <header>
-    <h1>IoT Air Quality & Environmental Monitoring Device</h1>
+    <h1>IoT Air Quality & Environmental Dashboard</h1>
+    <p>Monitor your environment in real-time with clear, easy-to-understand insights</p>
   </header>
 
   <main>
-    <!-- Latest Readings Cards -->
+    <!-- Latest Readings -->
     <section class="summary-cards">
-      <div class="card" id="tempCard">Temperature</div>
-      <div class="card" id="pressureCard">Pressure</div>
-      <div class="card" id="humidityCard">Humidity</div>
-      <div class="card" id="altitudeCard">Altitude</div>
+      <div class="card temp">
+        <div class="icon">🌡️</div>
+        <div class="value" id="tempCard">Temperature</div>
+        <div class="description">Air temperature in Celsius.</div>
+      </div>
+      <div class="card pressure">
+        <div class="icon">⚖️</div>
+        <div class="value" id="pressureCard">Pressure</div>
+        <div class="description">Atmospheric pressure in hPa (hectopascals).</div>
+      </div>
+      <div class="card humidity">
+        <div class="icon">💧</div>
+        <div class="value" id="humidityCard">Humidity</div>
+        <div class="description">Amount of moisture in the air (%).</div>
+      </div>
+      <div class="card altitude">
+        <div class="icon">🗻</div>
+        <div class="value" id="altitudeCard">Altitude</div>
+        <div class="description">Height above sea level (meters).</div>
+      </div>
     </section>
 
     <!-- Project Overview -->
     <section class="overview">
       <h2>Project Overview</h2>
-      <p>This project is a wireless IoT device built with an ESP32 microcontroller that collects air quality and environmental data from multiple sensors and sends it to a cloud API endpoint over Wi-Fi every 10 minutes.</p>
-      <p>Data was collected continuously for 2 days, and the charts shown here display a sample of the dataset for demonstration purposes.</p>
+      <p>This is a wireless IoT device that monitors air quality and environmental conditions using multiple sensors. It sends updates to this dashboard every 10 minutes.</p>
+      <p>The charts below show a **sample of 2-day data** to help understand trends, not live updates.</p>
     </section>
 
     <!-- System Overview -->
     <section class="overview">
       <h2>System Overview</h2>
       <ul>
-        <li><strong>BME280:</strong> Temperature, Humidity, Pressure, Altitude</li>
-        <li><strong>SCD30:</strong> CO₂ concentration</li>
-        <li><strong>SPS30:</strong> Particulate Matter (PM1.0–PM10)</li>
-        <li><strong>SGP40:</strong> VOC raw values & TVOC index</li>
+        <li><strong>BME280:</strong> Measures Temperature, Humidity, Pressure, and Altitude</li>
+        <li><strong>SCD30:</strong> Measures CO₂ levels in the air</li>
+        <li><strong>SPS30:</strong> Measures fine particles in the air (PM1.0–PM10)</li>
+        <li><strong>SGP40:</strong> Measures air quality index (TVOC)</li>
       </ul>
     </section>
 
-    <!-- Key Features -->
-    <section class="overview">
-      <h2>Key Features</h2>
-      <ul>
-        <li>Periodic Data Collection every 10 minutes</li>
-        <li>Multi-Sensor Integration into a single JSON payload</li>
-        <li>Wi-Fi Communication with automatic reconnect</li>
-        <li>Data Validation for reliable readings</li>
-      </ul>
-    </section>
-
-    <!-- Technology Stack -->
-    <section class="overview">
-      <h2>Technology Stack</h2>
-      <ul>
-        <li>Hardware: ESP32, BME280, SCD30, SPS30, SGP40</li>
-        <li>Software: Arduino IDE (C++), JSON formatting</li>
-        <li>Communication: HTTP POST over Wi-Fi</li>
-      </ul>
-    </section>
-
-    <!-- Outcome -->
-    <section class="overview">
-      <h2>Outcome</h2>
-      <p>The device provides a reliable, autonomous solution for monitoring air quality. Charts illustrate a sample of 2-day data to understand trends.</p>
-    </section>
-
-    <!-- Charts Section -->
+    <!-- Charts -->
     <section class="charts-section">
       <div class="chart-container">
         <h2>Temperature (°C)</h2>
@@ -97,6 +87,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
