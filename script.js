@@ -1,4 +1,4 @@
-// Subset of historical sensor data for demonstration (every 10 min over 2 days)
+// Sample sensor data for demonstration
 const sensorData = [
   { temperature: 24.15, pressure: 904.02, humidity: 28.45, altitude: 951.94, timestamp: "2025-12-05T11:37:06" },
   { temperature: 24.17, pressure: 904.06, humidity: 28.63, altitude: 951.5, timestamp: "2025-12-05T11:47:06" },
@@ -8,7 +8,7 @@ const sensorData = [
   { temperature: 24.35, pressure: 904.07, humidity: 28.64, altitude: 951.46, timestamp: "2025-12-05T12:27:06" }
 ];
 
-// Extract data for charts
+// Extract data
 const timestamps = sensorData.map(d => new Date(d.timestamp).toLocaleTimeString());
 const temperature = sensorData.map(d => d.temperature);
 const pressure = sensorData.map(d => d.pressure);
@@ -27,7 +27,9 @@ function createChart(ctx, label, data, color) {
         borderColor: color,
         backgroundColor: color + '33',
         fill: true,
-        tension: 0.4
+        tension: 0.4,
+        pointRadius: 4,
+        pointHoverRadius: 6
       }]
     },
     options: {
@@ -50,12 +52,13 @@ createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure
 createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#4CAF50');
 createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFC107');
 
-// Display latest readings in summary cards
+// Update latest readings in cards
 const latest = sensorData[sensorData.length - 1];
 document.getElementById('tempCard').textContent = `Temperature: ${latest.temperature} °C`;
 document.getElementById('pressureCard').textContent = `Pressure: ${latest.pressure} hPa`;
 document.getElementById('humidityCard').textContent = `Humidity: ${latest.humidity} %`;
 document.getElementById('altitudeCard').textContent = `Altitude: ${latest.altitude} m`;
+
 
 
 
