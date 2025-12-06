@@ -10,24 +10,25 @@
 <body>
   <header>
     <h1>IoT Air Quality & Environmental Monitoring Device</h1>
+    <p>Monitor your environment in real-time with easy-to-understand charts</p>
   </header>
 
   <main>
     <!-- Project Overview -->
     <section class="overview">
       <h2>Project Overview</h2>
-      <p>This is a wireless IoT device built with an ESP32 microcontroller that collects air quality and environmental data from multiple sensors and sends it to a cloud API endpoint over Wi-Fi every 10 minutes.</p>
-      <p>Data was collected continuously for 2 days. The charts below show a sample for demonstration purposes.</p>
+      <p>This wireless IoT device uses an ESP32 microcontroller to collect air quality and environmental data from multiple sensors and sends it to a cloud endpoint every 10 minutes.</p>
+      <p>The charts below display a sample of 2-day data for visualization purposes.</p>
     </section>
 
     <!-- System Overview -->
     <section class="overview">
       <h2>System Overview</h2>
       <ul>
-        <li><strong>BME280:</strong> Measures Temperature, Humidity, Pressure, Altitude</li>
+        <li><strong>BME280:</strong> Measures Temperature, Humidity, Pressure, and Altitude</li>
         <li><strong>SCD30:</strong> Measures CO₂ concentration</li>
         <li><strong>SPS30:</strong> Measures Particulate Matter (PM1.0–PM10)</li>
-        <li><strong>SGP40:</strong> Measures VOC raw values and TVOC index</li>
+        <li><strong>SGP40:</strong> Measures VOC raw values and computes TVOC index</li>
       </ul>
     </section>
 
@@ -36,7 +37,7 @@
       <h2>Key Features</h2>
       <ul>
         <li>Periodic data collection every 10 minutes</li>
-        <li>Multi-sensor integration in a single JSON payload</li>
+        <li>Multi-sensor integration into a single JSON payload</li>
         <li>Wi-Fi communication with auto reconnect</li>
         <li>Data validation for accurate readings</li>
       </ul>
@@ -55,7 +56,7 @@
     <!-- Outcome -->
     <section class="overview">
       <h2>Outcome</h2>
-      <p>The device provides a reliable and autonomous solution for monitoring air quality. Charts show only a sample of the 2-day dataset to help visualize trends.</p>
+      <p>The device provides reliable monitoring of air quality and environmental conditions. Charts show a small sample to help visualize trends.</p>
     </section>
 
     <!-- Charts Section -->
@@ -89,6 +90,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
