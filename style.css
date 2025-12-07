@@ -28,6 +28,11 @@ main {
 }
 
 /* Sections */
+.title {
+  font-size: 36px; 
+  font-weight: 700;
+}
+
 .overview {
   background: #ffffffdd;
   padding: 2rem;
