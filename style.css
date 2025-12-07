@@ -21,6 +21,17 @@ header {
   box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #ffffffaa;
+}
+
 main {
   max-width: 1100px;
   margin: auto;
@@ -28,11 +39,6 @@ main {
 }
 
 /* Sections */
-.title {
-  font-size: 36px; 
-  font-weight: 700;
-}
-
 .overview {
   background: #ffffffdd;
   padding: 2rem;
