@@ -19,8 +19,8 @@
     <section class="overview">
       <h2>Project Overview</h2>
       <p>
-        This project is a collaboration between <strong>TumoLabs – ClimateNet</strong> and <strong>UFAR</strong>, featuring a solar-powered ESP32-based IoT device with multiple environmental sensors.
-        My main contribution was integrating all sensor modules (BME280, SCD30, SPS30, SGP40) and developing the Arduino firmware, ensuring synchronized data collection, reliable cloud communication, and stable operation.
+        This project is a collaboration between TumoLabs – ClimateNet and UFAR, aimed at monitoring environmental and air-quality conditions with a solar-powered IoT device. The system seamlessly switches between solar energy and stored power, ensuring uninterrupted operation even during low sunlight periods. 
+        My main contribution was integrating all sensor modules and developing the complete Arduino firmware, ensuring synchronized data collection, reliable cloud communication, and stable device operation.
       </p>
     </section>
 
@@ -50,6 +50,18 @@
         <li><strong>Structured JSON Output:</strong> Over 20 parameters per measurement.</li>
         <li><strong>Cloud Integration:</strong> AWS API Gateway, Lambda, and S3 for reliable storage.</li>
       </ul>
+    </section>
+
+    <section class="overview">
+      <h2>Data Visualization</h2>
+      <p>The website features four interactive charts, created using a small portion of the dataset for better understanding:</p>
+      <ul>
+        <li><strong>Temperature (°C)</strong></li>
+        <li><strong>Humidity (%)</strong></li>
+        <li><strong>Pressure (hPa)</strong></li>
+        <li><strong>Altitude (m)</strong></li>
+      </ul>
+      <p>Charts illustrate environmental trends based on a two-day sample of the collected data.</p>
     </section>
 
     <!-- Data Visualization -->
