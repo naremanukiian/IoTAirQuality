@@ -19,74 +19,40 @@
     <section class="overview">
       <h2>Project Overview</h2>
       <p>
-        This project was developed as part of the ClimateNet program, featuring an ESP32-based IoT device equipped with multiple environmental and air-quality sensors. 
-        My main contribution was integrating all the sensor modules (BME280, SCD30, SPS30, and SGP40) into a single operational workflow, ensuring synchronized data collection and successful API communication.
-      </p>
-      <p>
-        The device records sensor data every 10 minutes and packages more than 20 parameters into a structured JSON payload before sending it to a cloud API for storage. 
-        The charts below represent a small extracted portion from a two-day dataset and demonstrate how collected values can be visualized for analysis.
+        This project is a collaboration between <strong>TumoLabs – ClimateNet</strong> and <strong>UFAR</strong>, featuring a solar-powered ESP32-based IoT device with multiple environmental sensors.
+        My main contribution was integrating all sensor modules (BME280, SCD30, SPS30, SGP40) and developing the Arduino firmware, ensuring synchronized data collection, reliable cloud communication, and stable operation.
       </p>
     </section>
 
-    <!-- System Overview -->
+    <!-- System Description -->
     <section class="overview">
-      <h2>System Overview</h2>
-      <p>The ESP32 collects the following measurements during each cycle:</p>
+      <h2>System Description</h2>
+      <p>The device collects over 20 environmental and air-quality parameters every 10 minutes, sent in structured JSON to AWS for storage and analysis.</p>
       <ul>
-        <li><strong>Temperature (°C)</strong> – Ambient air temperature.</li>
-        <li><strong>Humidity (%)</strong> – Relative moisture content.</li>
-        <li><strong>Pressure (hPa)</strong> – Atmospheric pressure levels.</li>
-        <li><strong>Altitude (m)</strong> – Calculated using pressure variations.</li>
-        <li><strong>CO₂ (ppm)</strong> – Carbon dioxide concentration.</li>
-        <li><strong>Particulate Matter</strong> (PM1.0, PM2.5, PM4.0, PM10) – Number of particles per cm³ per size class.</li>
-        <li><strong>Particle Count</strong> (NC0.5, NC1.0, NC2.5, NC4.0, NC10) – Mass concentration of airborne particles across size ranges.</li>
-        <li><strong>Typical Particle Size</strong> – Average detected particle diameter.</li>
-        <li><strong>Raw VOC Signal (SGP40)</strong> – Gas sensor output.</li>
-        <li><strong>TVOC Index</strong> – Total volatile organic compound index.</li>
-        <li><strong>Timestamp</strong> – Exact measurement time.</li>
-        <li><strong>Device ID</strong> – ESP32 identifier.</li>
+        <li><strong>Temperature (°C)</strong> – Ambient air temperature (BME280)</li>
+        <li><strong>Humidity (%)</strong> – Relative moisture content (BME280)</li>
+        <li><strong>Pressure (hPa)</strong> – Atmospheric pressure levels (BME280)</li>
+        <li><strong>Altitude (m)</strong> – Calculated from pressure variations (BME280)</li>
+        <li><strong>CO₂ Concentration (ppm)</strong> – Carbon dioxide levels (SCD30)</li>
+        <li><strong>Particulate Matter</strong> (PM1.0, PM2.5, PM4.0, PM10) – Number of airborne particles per size class (SPS30)</li>
+        <li><strong>Particle Counts</strong> (NC0.5, NC1.0, NC2.5, NC4.0, NC10) & Average Particle Size – Detailed particle distribution (SPS30)</li>
+        <li><strong>VOC Signals & TVOC Index</strong> – Volatile organic compounds in air (SGP40)</li>
       </ul>
-      <p>
-        Combined, these readings create a complete snapshot of environmental changes and air-quality conditions for each recorded moment.
-      </p>
+      <p>This setup gives a complete snapshot of environmental conditions, ideal for dashboards, analytics, and monitoring.</p>
     </section>
 
     <!-- Key Features -->
     <section class="overview">
       <h2>Key Features</h2>
       <ul>
-        <li><strong>Unified Sensor Integration:</strong> Four different sensors combined into a single operational system.</li>
-        <li><strong>Structured JSON Output:</strong> Over 20 sensor parameters included per measurement.</li>
-        <li><strong>Wi-Fi Auto-Recovery:</strong> Automatic reconnection ensures stable data delivery.</li>
-        <li><strong>Comprehensive Air-Quality Insight:</strong> Includes CO₂, particulate matter, VOCs, humidity, and more.</li>
-        <li><strong>Dashboard-Ready Data:</strong> Ideal for charts, analytics models, and real-time monitoring.</li>
+        <li><strong>Solar-Powered & Energy-Efficient:</strong> Continuous operation with solar and stored energy.</li>
+        <li><strong>Unified Sensor Integration:</strong> Four sensors in a single workflow.</li>
+        <li><strong>Structured JSON Output:</strong> Over 20 parameters per measurement.</li>
+        <li><strong>Cloud Integration:</strong> AWS API Gateway, Lambda, and S3 for reliable storage.</li>
       </ul>
     </section>
 
-    <!-- Technology Stack -->
-    <section class="overview">
-      <h2>Technology Stack</h2>
-      <p>The system is powered by robust IoT hardware and lightweight software:</p>
-      <ul>
-        <li><strong>Hardware:</strong> ESP32, BME280, SCD30, SPS30, SGP40</li>
-        <li><strong>Software:</strong> Arduino C++, sensor libraries, JSON handling</li>
-        <li><strong>Networking:</strong> Wi-Fi + HTTP POST to a cloud API</li>
-        <li><strong>Data Format:</strong> Timestamped JSON entries with 20+ recorded fields</li>
-      </ul>
-    </section>
-
-    <!-- Outcome -->
-    <section class="overview">
-      <h2>Outcome</h2>
-      <p>
-        This IoT setup monitors all major environmental indicators, from temperature and humidity to air pressure, altitude, particles, CO₂, and VOC levels.
-      </p>
-      <p>
-        The collected information serves as a solid starting point for creating dashboards, detecting trends, setting up alerts, and expanding into real-time monitoring.
-      </p>
-    </section>
-
-    <!-- Charts -->
+    <!-- Data Visualization -->
     <section class="charts-section">
       <div class="chart-container">
         <h2>Temperature (°C)</h2>
@@ -112,8 +78,8 @@
   </main>
 
   <footer>
-    <p>Developed by Nare Manukyan |
-      <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> |
+    <p>Developed by Nare Manukyan | 
+      <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | 
       <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a>
     </p>
   </footer>
@@ -121,6 +87,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
