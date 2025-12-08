@@ -1,6 +1,6 @@
 const sensorData = [
   { temperature: 24.15, pressure: 904.02, humidity: 28.45, altitude: 951.94, timestamp: "2025-12-05T11:37:06" },
-  { temperature: 24.17, pressure: 904.06, humidity: 28.63, altitude: 951.5, timestamp: "2025-12-05T11:47:06" },
+  { temperature: 24.17, pressure: 904.06, humidity: 28.63, altitude: 951.50, timestamp: "2025-12-05T11:47:06" },
   { temperature: 24.42, pressure: 904.06, humidity: 28.71, altitude: 951.58, timestamp: "2025-12-05T11:57:06" },
   { temperature: 24.34, pressure: 904.06, humidity: 28.46, altitude: 951.54, timestamp: "2025-12-05T12:07:06" },
   { temperature: 24.38, pressure: 904.04, humidity: 29.29, altitude: 951.68, timestamp: "2025-12-05T12:17:06" },
@@ -18,7 +18,6 @@ const pressure = sensorData.map(d => d.pressure);
 const humidity = sensorData.map(d => d.humidity);
 const altitude = sensorData.map(d => d.altitude);
 
-// Chart creation
 function createChart(ctx, label, data, color) {
   const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
   gradient.addColorStop(0, color + '88');
@@ -43,11 +42,7 @@ function createChart(ctx, label, data, color) {
       responsive: true,
       plugins: {
         legend: { display: true, position: 'top' },
-        tooltip: {
-          backgroundColor: '#333',
-          titleColor: '#fff',
-          bodyColor: '#fff'
-        }
+        tooltip: { backgroundColor: '#333', titleColor: '#fff', bodyColor: '#fff' }
       },
       scales: {
         x: { title: { display: true, text: 'Time (HH:MM)' } },
