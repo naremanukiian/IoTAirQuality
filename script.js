@@ -611,7 +611,7 @@ const sensorData = [
   {
     "temperature": 7.3,
     "pressure": 901.82,
-    "humidity": 99.0,
+    "humidity": 98.0,
     "altitude": 972.03,
     "co2ppm": 553.0,
     "pm1_0": 169.29,
@@ -800,7 +800,7 @@ const sensorData = [
   {
     "temperature": 7.17,
     "pressure": 902.1,
-    "humidity": 100.0,
+    "humidity": 95.5,
     "altitude": 969.43,
     "co2ppm": 558.0,
     "pm1_0": 219.99,
@@ -821,7 +821,7 @@ const sensorData = [
   {
     "temperature": 7.26,
     "pressure": 902.12,
-    "humidity": 100.0,
+    "humidity": 96.0,
     "altitude": 969.3,
     "co2ppm": 587.0,
     "pm1_0": 232.71,
@@ -842,7 +842,7 @@ const sensorData = [
   {
     "temperature": 7.36,
     "pressure": 902.12,
-    "humidity": 100.0,
+    "humidity": 96.0,
     "altitude": 969.23,
     "co2ppm": 593.0,
     "pm1_0": 223.92,
@@ -863,7 +863,7 @@ const sensorData = [
   {
     "temperature": 7.11,
     "pressure": 902.22,
-    "humidity": 100.0,
+    "humidity": 97.0,
     "altitude": 968.17,
     "co2ppm": 557.0,
     "pm1_0": 210.95,
@@ -884,7 +884,7 @@ const sensorData = [
   {
     "temperature": 7.2,
     "pressure": 902.25,
-    "humidity": 100.0,
+    "humidity": 98.0,
     "altitude": 968.07,
     "co2ppm": 605.0,
     "pm1_0": 224.76,
@@ -905,7 +905,7 @@ const sensorData = [
   {
     "temperature": 7.18,
     "pressure": 902.14,
-    "humidity": 100.0,
+    "humidity": 98.0,
     "altitude": 969.08,
     "co2ppm": 601.0,
     "pm1_0": 207.53,
@@ -926,7 +926,7 @@ const sensorData = [
   {
     "temperature": 6.93,
     "pressure": 902.14,
-    "humidity": 100.0,
+    "humidity": 98.5,
     "altitude": 969.09,
     "co2ppm": 581.0,
     "pm1_0": 197.24,
@@ -947,7 +947,7 @@ const sensorData = [
   {
     "temperature": 6.61,
     "pressure": 902.17,
-    "humidity": 100.0,
+    "humidity": 99.0,
     "altitude": 968.79,
     "co2ppm": 571.0,
     "pm1_0": 201.74,
@@ -968,7 +968,7 @@ const sensorData = [
   {
     "temperature": 6.57,
     "pressure": 902.08,
-    "humidity": 100.0,
+    "humidity": 99.0,
     "altitude": 969.63,
     "co2ppm": 573.0,
     "pm1_0": 209.47,
