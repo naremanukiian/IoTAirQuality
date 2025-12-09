@@ -1757,12 +1757,42 @@ function createChart(ctx, label, data, color) {
     options: {
       responsive: true,
       plugins: {
-        legend: { display: true, position: 'top' },
-        tooltip: { backgroundColor: '#333', titleColor: '#fff', bodyColor: '#fff' }
+        legend: { 
+          display: true, 
+          position: 'top',
+          labels: {
+            font: { size: 16 } // Bigger legend text
+          }
+        },
+        tooltip: { 
+          backgroundColor: '#333', 
+          titleColor: '#fff', 
+          bodyColor: '#fff',
+          titleFont: { size: 16 },  // Bigger tooltip title
+          bodyFont: { size: 14 }    // Bigger tooltip body
+        }
       },
       scales: {
-        x: { title: { display: true, text: 'Time (HH:MM)' } },
-        y: { title: { display: true, text: label } }
+        x: { 
+          title: { 
+            display: true, 
+            text: 'Time (HH:MM)',
+            font: { size: 16 } // Bigger x-axis label
+          },
+          ticks: {
+            font: { size: 14 } // Bigger x-axis ticks
+          }
+        },
+        y: { 
+          title: { 
+            display: true, 
+            text: label,
+            font: { size: 16 } // Bigger y-axis label
+          },
+          ticks: {
+            font: { size: 14 } // Bigger y-axis ticks
+          }
+        }
       }
     }
   });
