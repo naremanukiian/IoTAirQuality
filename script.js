@@ -1750,12 +1750,19 @@ function createChart(ctx, label, data, color) {
         backgroundColor: gradient,
         fill: true,
         tension: 0.4,
-        pointRadius: 5,
-        pointHoverRadius: 7
+        pointRadius: 4,
+        pointHoverRadius: 8
       }]
     },
     options: {
       responsive: true,
+
+      // 👇 FIX: Perfect tooltip interaction
+      interaction: {
+        mode: 'nearest',
+        intersect: false
+      },
+
       plugins: {
         legend: {
           display: true,
@@ -1763,13 +1770,18 @@ function createChart(ctx, label, data, color) {
           labels: { font: { size: 16 } }
         },
         tooltip: {
+          enabled: true,
           backgroundColor: '#333',
           titleColor: '#fff',
           bodyColor: '#fff',
+          padding: 10,
+          cornerRadius: 8,
+          displayColors: false,
           titleFont: { size: 16 },
           bodyFont: { size: 14 }
         }
       },
+
       scales: {
         x: {
           title: {
