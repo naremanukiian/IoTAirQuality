@@ -18,7 +18,7 @@ const sensorData = [
     "sgp40_raw": 30182,
     "tvoc_index": 1,
     "deviceId": "ESP32_01",
-    "timestamp": "2025-12-08T16:18:23.741265+04:00"
+    "timestamp": "2025-12-08T15:00:23.741265+04:00"
   },
   {
     "temperature": 28.55,
@@ -39,7 +39,7 @@ const sensorData = [
     "sgp40_raw": 30232,
     "tvoc_index": 1,
     "deviceId": "ESP32_01",
-    "timestamp": "2025-12-08T16:18:27.419487+04:00"
+    "timestamp": "2025-12-08T15:10:27.419487+04:00"
   },
   {
     "temperature": 28.49,
@@ -60,7 +60,7 @@ const sensorData = [
     "sgp40_raw": 30263,
     "tvoc_index": 1,
     "deviceId": "ESP32_01",
-    "timestamp": "2025-12-08T16:18:31.124190+04:00"
+    "timestamp": "2025-12-08T15:20:31.124190+04:00"
   },
   {
     "temperature": 28.38,
@@ -81,7 +81,7 @@ const sensorData = [
     "sgp40_raw": 30297,
     "tvoc_index": 1,
     "deviceId": "ESP32_01",
-    "timestamp": "2025-12-08T16:18:36.016030+04:00"
+    "timestamp": "2025-12-08T15:30:36.016030+04:00"
   },
   {
     "temperature": 28.29,
@@ -102,7 +102,7 @@ const sensorData = [
     "sgp40_raw": 30346,
     "tvoc_index": 2,
     "deviceId": "ESP32_01",
-    "timestamp": "2025-12-08T16:18:40.015690+04:00"
+    "timestamp": "2025-12-08T15:40:40.015690+04:00"
   },
   {
     "temperature": 28.23,
@@ -123,7 +123,7 @@ const sensorData = [
     "sgp40_raw": 30389,
     "tvoc_index": 3,
     "deviceId": "ESP32_01",
-    "timestamp": "2025-12-08T16:18:43.502896+04:00"
+    "timestamp": "2025-12-08T15:50:43.502896+04:00"
   },
   {
     "temperature": 28.17,
@@ -144,7 +144,7 @@ const sensorData = [
     "sgp40_raw": 30415,
     "tvoc_index": 3,
     "deviceId": "ESP32_01",
-    "timestamp": "2025-12-08T16:18:47.824661+04:00"
+    "timestamp": "2025-12-08T16:00:47.824661+04:00"
   },
   {
     "temperature": 27.52,
@@ -165,7 +165,7 @@ const sensorData = [
     "sgp40_raw": 30357,
     "tvoc_index": 0,
     "deviceId": "ESP32_01",
-    "timestamp": "2025-12-08T16:20:10.465372+04:00"
+    "timestamp": "2025-12-08T16:10:10.465372+04:00"
   },
   {
     "temperature": 27.52,
@@ -207,7 +207,7 @@ const sensorData = [
     "sgp40_raw": 30652,
     "tvoc_index": 0,
     "deviceId": "ESP32_01",
-    "timestamp": "2025-12-08T16:34:58.308572+04:00"
+    "timestamp": "2025-12-08T16:30:58.308572+04:00"
   },
   {
     "temperature": 26.96,
@@ -1723,10 +1723,16 @@ const sensorData = [
   }
 ];
 
-// Convert timestamps to HH:MM
+// Convert timestamps to HH:MM for x-axis
 const timestamps = sensorData.map(d => {
   const date = new Date(d.timestamp);
   return `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
+});
+
+// Keep full datetime for tooltips
+const fullTimestamps = sensorData.map(d => {
+  const date = new Date(d.timestamp);
+  return date.toLocaleString(); // Shows full date + time
 });
 
 const temperature = sensorData.map(d => d.temperature);
@@ -1742,7 +1748,7 @@ function createChart(ctx, label, data, color) {
   return new Chart(ctx, {
     type: 'line',
     data: {
-      labels: timestamps,
+      labels: timestamps, // short labels for axis
       datasets: [{
         label: label,
         data: data,
@@ -1757,35 +1763,26 @@ function createChart(ctx, label, data, color) {
     options: {
       responsive: true,
       plugins: {
-        legend: {
-          display: true,
-          position: 'top',
-          labels: { font: { size: 16 } }
+        legend: { 
+          display: true, 
+          position: 'top'
         },
         tooltip: {
-          backgroundColor: '#333',
-          titleColor: '#fff',
-          bodyColor: '#fff',
-          titleFont: { size: 16 },
-          bodyFont: { size: 14 }
+          callbacks: {
+            label: function(context) {
+              const value = context.parsed.y;
+              const index = context.dataIndex;
+              return `${label}: ${value} (at ${fullTimestamps[index]})`;
+            }
+          }
         }
       },
       scales: {
-        x: {
-          title: {
-            display: true,
-            text: 'Time (HH:MM)',
-            font: { size: 16 }
-          },
-          ticks: { font: { size: 14 } }
+        x: { 
+          title: { display: true, text: 'Time (HH:MM)' }
         },
-        y: {
-          title: {
-            display: true,
-            text: label,
-            font: { size: 16 }
-          },
-          ticks: { font: { size: 14 } }
+        y: { 
+          title: { display: true, text: label }
         }
       }
     }
