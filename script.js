@@ -1729,8 +1729,10 @@ const timestamps = sensorData.map(d => {
   return `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
 });
 
-// Full timestamp for tooltip
-const fullTimestamps = sensorData.map(d => new Date(d.timestamp).toLocaleString());
+const temperature = sensorData.map(d => d.temperature);
+const pressure = sensorData.map(d => d.pressure);
+const humidity = sensorData.map(d => d.humidity);
+const altitude = sensorData.map(d => d.altitude);
 
 function createChart(ctx, label, data, color) {
   const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
@@ -1754,36 +1756,37 @@ function createChart(ctx, label, data, color) {
     },
     options: {
       responsive: true,
-
-      // Smooth tooltip behavior
-      interaction: {
-        mode: 'nearest',
-        intersect: false
-      },
-
       plugins: {
-        legend: { display: true, position: 'top' },
-        tooltip: { 
+        legend: {
+          display: true,
+          position: 'top',
+          labels: { font: { size: 16 } }
+        },
+        tooltip: {
           backgroundColor: '#333',
           titleColor: '#fff',
           bodyColor: '#fff',
-          padding: 12,
-          cornerRadius: 8,
-          bodyFont: { size: 16 },
-          titleFont: { size: 18 },
-          displayColors: false,
-          callbacks: {
-            label: function(context) {
-              const value = context.parsed.y;
-              const i = context.dataIndex;
-              return `${label}: ${value}\nTime: ${fullTimestamps[i]}`;
-            }
-          }
+          titleFont: { size: 16 },
+          bodyFont: { size: 14 }
         }
       },
       scales: {
-        x: { title: { display: true, text: 'Time (HH:MM)' } },
-        y: { title: { display: true, text: label } }
+        x: {
+          title: {
+            display: true,
+            text: 'Time (HH:MM)',
+            font: { size: 16 }
+          },
+          ticks: { font: { size: 14 } }
+        },
+        y: {
+          title: {
+            display: true,
+            text: label,
+            font: { size: 16 }
+          },
+          ticks: { font: { size: 14 } }
+        }
       }
     }
   });
