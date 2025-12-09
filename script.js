@@ -1723,22 +1723,14 @@ const sensorData = [
   }
 ];
 
-// Convert timestamps to HH:MM for x-axis
+// Convert timestamps to HH:MM
 const timestamps = sensorData.map(d => {
   const date = new Date(d.timestamp);
   return `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
 });
 
-// Keep full datetime for tooltips
-const fullTimestamps = sensorData.map(d => {
-  const date = new Date(d.timestamp);
-  return date.toLocaleString(); // Shows full date + time
-});
-
-const temperature = sensorData.map(d => d.temperature);
-const pressure = sensorData.map(d => d.pressure);
-const humidity = sensorData.map(d => d.humidity);
-const altitude = sensorData.map(d => d.altitude);
+// Full timestamp for tooltip
+const fullTimestamps = sensorData.map(d => new Date(d.timestamp).toLocaleString());
 
 function createChart(ctx, label, data, color) {
   const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
@@ -1748,7 +1740,7 @@ function createChart(ctx, label, data, color) {
   return new Chart(ctx, {
     type: 'line',
     data: {
-      labels: timestamps, // short labels for axis
+      labels: timestamps,
       datasets: [{
         label: label,
         data: data,
@@ -1763,27 +1755,28 @@ function createChart(ctx, label, data, color) {
     options: {
       responsive: true,
       plugins: {
-        legend: { 
-          display: true, 
-          position: 'top'
-        },
-        tooltip: {
+        legend: { display: true, position: 'top' },
+        tooltip: { 
+          backgroundColor: '#333',
+          titleColor: '#fff',
+          bodyColor: '#fff',
+          padding: 12,
+          cornerRadius: 8,
+          bodyFont: { size: 16 },
+          titleFont: { size: 18 },
+          displayColors: false,
           callbacks: {
             label: function(context) {
               const value = context.parsed.y;
-              const index = context.dataIndex;
-              return `${label}: ${value} (at ${fullTimestamps[index]})`;
+              const i = context.dataIndex;
+              return `${label}: ${value}\nTime: ${fullTimestamps[i]}`;
             }
           }
         }
       },
       scales: {
-        x: { 
-          title: { display: true, text: 'Time (HH:MM)' }
-        },
-        y: { 
-          title: { display: true, text: label }
-        }
+        x: { title: { display: true, text: 'Time (HH:MM)' } },
+        y: { title: { display: true, text: label } }
       }
     }
   });
