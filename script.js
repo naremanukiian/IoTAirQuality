@@ -632,7 +632,7 @@ const sensorData = [
   {
     "temperature": 7.05,
     "pressure": 901.83,
-    "humidity": 100.0,
+    "humidity": 98.0,
     "altitude": 971.92,
     "co2ppm": 552.0,
     "pm1_0": 174.13,
@@ -653,7 +653,7 @@ const sensorData = [
   {
     "temperature": 6.84,
     "pressure": 901.83,
-    "humidity": 100.0,
+    "humidity": 97.0,
     "altitude": 971.87,
     "co2ppm": 552.0,
     "pm1_0": 214.92,
@@ -674,7 +674,7 @@ const sensorData = [
   {
     "temperature": 6.57,
     "pressure": 901.79,
-    "humidity": 100.0,
+    "humidity": 97.0,
     "altitude": 972.27,
     "co2ppm": 549.0,
     "pm1_0": 199.19,
@@ -695,7 +695,7 @@ const sensorData = [
   {
     "temperature": 6.45,
     "pressure": 901.86,
-    "humidity": 100.0,
+    "humidity": 96.0,
     "altitude": 971.63,
     "co2ppm": 536.0,
     "pm1_0": 192.01,
@@ -716,7 +716,7 @@ const sensorData = [
   {
     "temperature": 6.24,
     "pressure": 902.01,
-    "humidity": 100.0,
+    "humidity": 96.0,
     "altitude": 970.28,
     "co2ppm": 538.0,
     "pm1_0": 196.69,
@@ -737,7 +737,7 @@ const sensorData = [
   {
     "temperature": 6.4,
     "pressure": 901.97,
-    "humidity": 100.0,
+    "humidity": 95.0,
     "altitude": 970.68,
     "co2ppm": 548.0,
     "pm1_0": 234.64,
@@ -758,7 +758,7 @@ const sensorData = [
   {
     "temperature": 6.86,
     "pressure": 901.94,
-    "humidity": 100.0,
+    "humidity": 95.0,
     "altitude": 970.92,
     "co2ppm": 580.0,
     "pm1_0": 251.87,
@@ -779,7 +779,7 @@ const sensorData = [
   {
     "temperature": 7.04,
     "pressure": 902.12,
-    "humidity": 100.0,
+    "humidity": 95.0,
     "altitude": 969.3,
     "co2ppm": 576.0,
     "pm1_0": 236.07,
@@ -1640,7 +1640,7 @@ const sensorData = [
   {
     "temperature": 5.26,
     "pressure": 902.16,
-    "humidity": 100.0,
+    "humidity": 99.0,
     "altitude": 968.93,
     "co2ppm": 572.0,
     "pm1_0": 262.48,
@@ -1661,7 +1661,7 @@ const sensorData = [
   {
     "temperature": 5.43,
     "pressure": 902.26,
-    "humidity": 100.0,
+    "humidity": 95.0,
     "altitude": 967.94,
     "co2ppm": 570.0,
     "pm1_0": 321.42,
@@ -1682,7 +1682,7 @@ const sensorData = [
   {
     "temperature": 5.73,
     "pressure": 902.3,
-    "humidity": 100.0,
+    "humidity": 95.0,
     "altitude": 967.63,
     "co2ppm": 560.0,
     "pm1_0": 316.02,
@@ -1703,7 +1703,7 @@ const sensorData = [
   {
     "temperature": 5.73,
     "pressure": 902.23,
-    "humidity": 100.0,
+    "humidity": 99.0,
     "altitude": 968.26,
     "co2ppm": 560.0,
     "pm1_0": 322.12,
