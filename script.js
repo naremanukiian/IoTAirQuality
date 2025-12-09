@@ -1757,41 +1757,35 @@ function createChart(ctx, label, data, color) {
     options: {
       responsive: true,
       plugins: {
-        legend: { 
-          display: true, 
+        legend: {
+          display: true,
           position: 'top',
-          labels: {
-            font: { size: 16 } // Bigger legend text
-          }
+          labels: { font: { size: 16 } }
         },
-        tooltip: { 
-          backgroundColor: '#333', 
-          titleColor: '#fff', 
+        tooltip: {
+          backgroundColor: '#333',
+          titleColor: '#fff',
           bodyColor: '#fff',
-          titleFont: { size: 16 },  // Bigger tooltip title
-          bodyFont: { size: 14 }    // Bigger tooltip body
+          titleFont: { size: 16 },
+          bodyFont: { size: 14 }
         }
       },
       scales: {
-        x: { 
-          title: { 
-            display: true, 
+        x: {
+          title: {
+            display: true,
             text: 'Time (HH:MM)',
-            font: { size: 16 } // Bigger x-axis label
+            font: { size: 16 }
           },
-          ticks: {
-            font: { size: 14 } // Bigger x-axis ticks
-          }
+          ticks: { font: { size: 14 } }
         },
-        y: { 
-          title: { 
-            display: true, 
+        y: {
+          title: {
+            display: true,
             text: label,
-            font: { size: 16 } // Bigger y-axis label
+            font: { size: 16 }
           },
-          ticks: {
-            font: { size: 14 } // Bigger y-axis ticks
-          }
+          ticks: { font: { size: 14 } }
         }
       }
     }
@@ -1802,13 +1796,3 @@ createChart(document.getElementById('temperatureChart'), 'Temperature (°C)', te
 createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure, '#3F51B5');
 createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#4CAF50');
 createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFC107');
-
-
-
-
-
-
-
-
-
-
