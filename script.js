@@ -1754,6 +1754,13 @@ function createChart(ctx, label, data, color) {
     },
     options: {
       responsive: true,
+
+      // Smooth tooltip behavior
+      interaction: {
+        mode: 'nearest',
+        intersect: false
+      },
+
       plugins: {
         legend: { display: true, position: 'top' },
         tooltip: { 
