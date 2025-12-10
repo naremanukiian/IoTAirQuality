@@ -8,29 +8,19 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+
   <header>
-    <div class="header-top-bar"></div>
-    <div class="header-main container">
-      <div class="header-left">
-        <h1>IoT Air Quality & Environmental Monitoring Device</h1>
-        <p>Air Quality Monitoring & Data Visualization</p>
-      </div>
-      <nav class="header-nav">
-        <a href="#overview">Overview</a>
-        <a href="#system">System</a>
-        <a href="#features">Features</a>
-        <a href="#charts">Charts</a>
-      </nav>
-    </div>
+    <h1>IoT Air Quality & Environmental Monitoring Device</h1>
+    <p>Air Quality Monitoring & Data Visualization</p>
   </header>
 
-
   <main>
+
     <!-- Project Overview -->
-    <section class="overview fade-in">
+    <section class="overview">
       <h2>Project Overview</h2>
       <p>
-        This project is a collaboration between <strong>TumoLabs – ClimateNet</strong> and <strong>UFAR</strong>, aimed at monitoring environmental and air-quality conditions with a solar-powered IoT device. The system seamlessly switches between solar energy and stored power, ensuring uninterrupted operation even during low sunlight periods. 
+        This project is a collaboration between <strong>TumoLabs – ClimateNet</strong> and <strong>UFAR</strong>, aimed at monitoring environmental and air-quality conditions with a solar-powered IoT device. The system seamlessly switches between solar energy and stored power, ensuring uninterrupted operation even during low sunlight periods.
       </p>
       <p>
         My main contribution was integrating all sensor modules and developing the complete Arduino firmware, ensuring synchronized data collection, reliable cloud communication, and stable device operation.
@@ -38,7 +28,7 @@
     </section>
 
     <!-- System Description -->
-    <section class="overview fade-in">
+    <section class="overview">
       <h2>System Description</h2>
       <p>The device collects over 20 environmental and air-quality parameters every 10 minutes, sent in structured JSON to AWS for storage and analysis.</p>
       <ul>
@@ -55,17 +45,18 @@
     </section>
 
     <!-- Key Features -->
-    <section class="overview fade-in">
+    <section class="overview">
       <h2>Key Features</h2>
       <ul>
         <li><strong>Solar-Powered & Energy-Efficient:</strong> Operates continuously by switching between solar energy and stored battery power, ensuring uninterrupted monitoring even in low-light conditions, while maintaining optimal energy efficiency.</li>
         <li><strong>Unified Sensor Integration:</strong> Four sensors (BME280, SCD30, SPS30, SGP40) work together in a single workflow, enabling synchronized collection of over 20 environmental and air-quality parameters.</li>
-        <li><strong>Structured JSON Output:</strong> Generates a well-organized JSON payload for each measurement, including temperature, humidity, pressure, altitude, CO₂ levels, particulate matter, particle counts, and VOC signals, ideal for analysis and visualization.</li>
-        <li><strong>Cloud Integration:</strong> Data is transmitted securely via AWS API Gateway, processed with Lambda functions, and stored on S3, providing scalable, real-time access for dashboards and analytics.</li>
+        <li><strong>Structured JSON Output:</strong> Generates a well-organized JSON payload for each measurement, ideal for analysis and visualization.</li>
+        <li><strong>Cloud Integration:</strong> Data is transmitted securely via AWS API Gateway, processed with Lambda functions, and stored on S3 for real-time access.</li>
       </ul>
     </section>
 
-    <section class="overview fade-in">
+    <!-- Data Visualization -->
+    <section class="overview">
       <h2>Data Visualization</h2>
       <p>The website features four interactive charts, created using a small portion of the dataset for better understanding:</p>
       <ul>
@@ -77,38 +68,33 @@
       <p>Charts illustrate environmental trends based on a two-day sample of the collected data.</p>
     </section>
 
-    <!-- Data Visualization -->
+    <!-- Charts Section -->
     <section class="charts-section">
-      <div class="chart-container fade-in">
+      <div class="chart-container">
         <h2>Temperature (°C)</h2>
         <canvas id="temperatureChart"></canvas>
       </div>
-
-      <div class="chart-container fade-in">
+      <div class="chart-container">
         <h2>Pressure (hPa)</h2>
         <canvas id="pressureChart"></canvas>
       </div>
-
-      <div class="chart-container fade-in">
+      <div class="chart-container">
         <h2>Humidity (%)</h2>
         <canvas id="humidityChart"></canvas>
       </div>
-
-      <div class="chart-container fade-in">
+      <div class="chart-container">
         <h2>Altitude (m)</h2>
         <canvas id="altitudeChart"></canvas>
       </div>
     </section>
+
   </main>
 
   <footer>
-    <div>
-      <p>Developed by Nare Manukyan</p>
-      <p>
-        <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | 
-        <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a>
-      </p>
-    </div>
+    <p>Developed by Nare Manukyan | 
+      <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a>
+    </p>
   </footer>
 
   <script src="script.js"></script>
