@@ -70,9 +70,10 @@ main {
 /* CHARTS */
 .charts-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr;  /* one chart per row */
   gap: 2rem;
 }
+
 
 .chart-container {
   background: white;
