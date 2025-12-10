@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +10,7 @@ body {
   background: linear-gradient(135deg, #f5f7fa, #e4ebf7);
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* HEADER */
@@ -55,6 +56,12 @@ main {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s forwards;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.overview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 .overview h2 {
@@ -74,7 +81,6 @@ main {
   gap: 2rem;
 }
 
-
 .chart-container {
   background: white;
   padding: 2rem;
@@ -86,8 +92,12 @@ main {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s forwards;
-  animation-delay: 0.2s;
 }
+
+.chart-container:nth-child(1) { animation-delay: 0.1s; }
+.chart-container:nth-child(2) { animation-delay: 0.3s; }
+.chart-container:nth-child(3) { animation-delay: 0.5s; }
+.chart-container:nth-child(4) { animation-delay: 0.7s; }
 
 .chart-container h2 {
   text-align: center;
