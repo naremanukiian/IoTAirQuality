@@ -9,14 +9,15 @@
 </head>
 <body>
   <header>
-    <h1>IoT Air Quality & Environmental Monitoring Device</h1>
-    <p>Air Quality Monitoring & Data Visualization</p>
+    <div class="header-inner">
+      <h1>IoT Air Quality & Environmental Monitoring Device</h1>
+      <p>Air Quality Monitoring & Data Visualization</p>
+    </div>
   </header>
 
   <main>
-
     <!-- Project Overview -->
-    <section class="overview">
+    <section class="overview fade-in">
       <h2>Project Overview</h2>
       <p>
         This project is a collaboration between <strong>TumoLabs – ClimateNet</strong> and <strong>UFAR</strong>, aimed at monitoring environmental and air-quality conditions with a solar-powered IoT device. The system seamlessly switches between solar energy and stored power, ensuring uninterrupted operation even during low sunlight periods. 
@@ -24,11 +25,10 @@
       <p>
         My main contribution was integrating all sensor modules and developing the complete Arduino firmware, ensuring synchronized data collection, reliable cloud communication, and stable device operation.
       </p>
-
     </section>
 
     <!-- System Description -->
-    <section class="overview">
+    <section class="overview fade-in">
       <h2>System Description</h2>
       <p>The device collects over 20 environmental and air-quality parameters every 10 minutes, sent in structured JSON to AWS for storage and analysis.</p>
       <ul>
@@ -45,7 +45,7 @@
     </section>
 
     <!-- Key Features -->
-    <section class="overview">
+    <section class="overview fade-in">
       <h2>Key Features</h2>
       <ul>
         <li><strong>Solar-Powered & Energy-Efficient:</strong> Operates continuously by switching between solar energy and stored battery power, ensuring uninterrupted monitoring even in low-light conditions, while maintaining optimal energy efficiency.</li>
@@ -55,7 +55,7 @@
       </ul>
     </section>
 
-    <section class="overview">
+    <section class="overview fade-in">
       <h2>Data Visualization</h2>
       <p>The website features four interactive charts, created using a small portion of the dataset for better understanding:</p>
       <ul>
@@ -69,51 +69,38 @@
 
     <!-- Data Visualization -->
     <section class="charts-section">
-      <div class="chart-container">
+      <div class="chart-container fade-in">
         <h2>Temperature (°C)</h2>
         <canvas id="temperatureChart"></canvas>
       </div>
 
-      <div class="chart-container">
+      <div class="chart-container fade-in">
         <h2>Pressure (hPa)</h2>
         <canvas id="pressureChart"></canvas>
       </div>
 
-      <div class="chart-container">
+      <div class="chart-container fade-in">
         <h2>Humidity (%)</h2>
         <canvas id="humidityChart"></canvas>
       </div>
 
-      <div class="chart-container">
+      <div class="chart-container fade-in">
         <h2>Altitude (m)</h2>
         <canvas id="altitudeChart"></canvas>
       </div>
     </section>
-
   </main>
 
   <footer>
-    <p>Developed by Nare Manukyan | 
-      <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a>
-    </p>
+    <div>
+      <p>Developed by Nare Manukyan</p>
+      <p>
+        <a href="https://github.com/naremanukiian" target="_blank">GitHub</a> | 
+        <a href="https://www.linkedin.com/in/naremanukiian/" target="_blank">LinkedIn</a>
+      </p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
