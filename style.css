@@ -8,15 +8,13 @@
 }
 
 body {
-  /* Smooth dark gradient background */
-  background: linear-gradient(135deg, #0D1117 0%, #141821 35%, #1A1F2E 70%, #161B22 100%);
-  color: #C9DDE5;
+  background: #0D1117; /* solid dark background */
+  color: #C9DDE5;      /* light text for contrast */
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
-  transition: background 0.5s ease;
+  transition: background 0.3s ease;
 }
-
 /* HEADER */
 header {
   background: linear-gradient(90deg, #161B22, #0D1117);
