@@ -1808,7 +1808,9 @@ function createChart(ctx, label, data, color) {
 }
 
 // Dark-theme-friendly chart colors
-createChart(document.getElementById('temperatureChart'), 'Temperature (°C)', temperature, '#FFAB91'); // warm orange
-createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure, '#90CAF9'); // light blue
-createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#A5D6A7'); // light green
-createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFD54F'); // bright yellow
+// Dark-theme-friendly chart colors
+createChart(document.getElementById('temperatureChart'), 'Temperature (°C)', temperature, '#FF8A65'); // warm coral/orange
+createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure, '#4B6CB7'); // accent blue
+createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#81C784'); // mint green
+createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFD54F'); // golden yellow
+
