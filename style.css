@@ -8,8 +8,8 @@
 }
 
 body {
-  /* Gradient background: dark navy to deep purple/black */
-  background: linear-gradient(135deg, #0D1117, #1A1F2E, #161B22);
+  /* Smooth dark gradient background */
+  background: linear-gradient(135deg, #0D1117 0%, #141821 35%, #1A1F2E 70%, #161B22 100%);
   color: #C9DDE5;
   line-height: 1.6;
   overflow-x: hidden;
