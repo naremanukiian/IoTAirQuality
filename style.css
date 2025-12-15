@@ -18,13 +18,12 @@ body {
 /* HEADER */
 header {
   background: linear-gradient(90deg, #161B22, #0D1117);
-  color: #58A6FF;
+  color: #313366; /* changed */
   padding: 3rem 2rem;
   text-align: center;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.7);
-  position: sticky;
   top: 0;
   z-index: 100;
   overflow: hidden;
@@ -37,7 +36,7 @@ header::after {
   height: 200%;
   top: -50%;
   left: -50%;
-  background: linear-gradient(45deg, #58A6FF, #1F6FEB, #0D1117, #58A6FF);
+  background: linear-gradient(45deg, #313366, #4D3F7F, #0D1117, #313366);
   background-size: 400% 400%;
   animation: gradientMove 15s linear infinite;
   opacity: 0.05;
@@ -80,7 +79,7 @@ main {
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-  border: 1px solid rgba(88,166,255,0.2);
+  border: 1px solid rgba(49,51,102,0.2); /* changed */
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -93,7 +92,7 @@ main {
   height: 200%;
   top: -50%;
   left: -50%;
-  background: linear-gradient(120deg, #58A6FF, #1F6FEB, #0D1117, #58A6FF);
+  background: linear-gradient(120deg, #313366, #4D3F7F, #0D1117, #313366);
   background-size: 400% 400%;
   animation: gradientMove 12s linear infinite;
   opacity: 0.05;
@@ -103,11 +102,11 @@ main {
 .overview:hover, .chart-container:hover {
   transform: translateY(-7px);
   box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-  border-color: #58A6FF;
+  border-color: #313366; /* changed */
 }
 
 .overview h2, .chart-container h2 {
-  color: #58A6FF;
+  color: #313366; /* changed */
   margin-bottom: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -139,7 +138,7 @@ footer {
   padding: 2rem;
   background-color: #161B22;
   margin-top: 3rem;
-  border-top: 1px solid rgba(88,166,255,0.2);
+  border-top: 1px solid rgba(49,51,102,0.2); /* changed */
   position: relative;
   overflow: hidden;
 }
@@ -151,7 +150,7 @@ footer::before {
   height: 200%;
   top: -50%;
   left: -50%;
-  background: linear-gradient(45deg, #58A6FF, #1F6FEB, #0D1117, #58A6FF);
+  background: linear-gradient(45deg, #313366, #4D3F7F, #0D1117, #313366);
   background-size: 400% 400%;
   animation: gradientMove 20s linear infinite;
   opacity: 0.03;
@@ -159,19 +158,19 @@ footer::before {
 }
 
 footer a {
-  color: #58A6FF;
+  color: #313366; /* changed */
   text-decoration: none;
   font-weight: 500;
 }
 
 footer a:hover {
-  color: #1F6FEB;
+  color: #4D3F7F;
   text-decoration: underline;
 }
 
 /* BUTTONS */
 button {
-  background: linear-gradient(90deg, #58A6FF, #1F6FEB);
+  background: linear-gradient(90deg, #313366, #4D3F7F);
   color: #0D1117;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -183,7 +182,7 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(90deg, #1F6FEB, #58A6FF);
+  background: linear-gradient(90deg, #4D3F7F, #313366);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
@@ -198,7 +197,7 @@ button:hover {
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #58A6FF;
+  background: #313366; /* changed */
   border-radius: 5px;
 }
 
