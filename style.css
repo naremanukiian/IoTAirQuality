@@ -4,24 +4,27 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease; /* smooth transitions for hover effects */
 }
 
 body {
-  background: #313366; /* slightly lighter dark blue for contrast with cards */
-  color: #C9DDE5;      /* light text for readability */
+  background: #0D1117; /* very dark background */
+  color: #C9DDE5;      /* light text */
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* HEADER */
 header {
-  background: linear-gradient(90deg, #313366, #4D1C3F); /* dark gradient */
-  color: #C9DDE5;
+  background: linear-gradient(90deg, #161B22, #0D1117);
+  color: #58A6FF;
   padding: 3rem 2rem;
   text-align: center;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+  position: sticky;
   top: 0;
   z-index: 100;
 }
@@ -29,54 +32,59 @@ header {
 header h1 {
   font-size: 2.5rem;
   font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 header p {
   margin-top: 0.5rem;
   font-size: 1.2rem;
-  color: #C9DDE5aa;
+  color: #8B949E;
 }
 
 /* MAIN CONTENT */
 main {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* OVERVIEW SECTIONS */
-.overview {
-  background: #072633; /* dark bluish card */
+/* GLASSMORPHISM CARDS */
+.overview, .chart-container {
+  background: rgba(22, 27, 34, 0.85); /* semi-transparent dark card */
+  backdrop-filter: blur(10px); /* glass effect */
   padding: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(88,166,255,0.2); /* subtle accent border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.overview h2 {
-  color: #C9DDE5;
+.overview:hover, .chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+}
+
+.overview h2, .chart-container h2 {
+  color: #58A6FF;
   margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .overview ul {
   margin-left: 1.2rem;
+  color: #C9DDE5;
 }
 
 /* CHARTS */
 .charts-section {
   display: grid;
-  grid-template-columns: 1fr; /* one chart per row */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-}
-
-.chart-container {
-  background: #072633; /* same dark card background */
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-  width: 100%;
-  height: auto;
-  overflow: visible;
 }
 
 canvas {
@@ -85,28 +93,42 @@ canvas {
   max-width: 100%;
 }
 
-/* Chart titles */
-.chart-container h2 {
-  text-align: center;
-  color: #C9DDE5;
-  margin-bottom: 1rem;
-}
-
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 1.5rem;
-  background-color: #313366; /* dark footer */
+  padding: 2rem;
+  background-color: #161B22;
   margin-top: 3rem;
+  border-top: 1px solid rgba(88,166,255,0.2);
 }
 
 footer a {
-  color: #C9DDE5;
+  color: #58A6FF;
   text-decoration: none;
+  font-weight: 500;
 }
 
 footer a:hover {
-  color: #4D1C3F;
+  color: #1F6FEB;
+  text-decoration: underline;
+}
+
+/* BUTTONS (optional) */
+button {
+  background: #58A6FF;
+  color: #0D1117;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #1F6FEB;
+  transform: translateY(-2px);
 }
 
 /* RESPONSIVE */
@@ -114,4 +136,26 @@ footer a:hover {
   .charts-section {
     grid-template-columns: 1fr;
   }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
+
+/* ADDITIONAL EFFECTS */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0D1117;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #58A6FF;
+  border-radius: 5px;
 }
