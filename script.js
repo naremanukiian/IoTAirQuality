@@ -1736,8 +1736,8 @@ const altitude = sensorData.map(d => d.altitude);
 
 function createChart(ctx, label, data, color) {
   const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
-  gradient.addColorStop(0, color + '88');
-  gradient.addColorStop(1, color + '11');
+  gradient.addColorStop(0, color + '88'); // semi-transparent top
+  gradient.addColorStop(1, color + '22'); // more transparent bottom
 
   return new Chart(ctx, {
     type: 'line',
@@ -1756,24 +1756,24 @@ function createChart(ctx, label, data, color) {
     },
     options: {
       responsive: true,
-
-      // 👇 FIX: Perfect tooltip interaction
       interaction: {
         mode: 'nearest',
         intersect: false
       },
-
       plugins: {
         legend: {
           display: true,
           position: 'top',
-          labels: { font: { size: 16 } }
+          labels: {
+            font: { size: 16 },
+            color: '#C9DDE5' // legend text light
+          }
         },
         tooltip: {
           enabled: true,
-          backgroundColor: '#333',
-          titleColor: '#fff',
-          bodyColor: '#fff',
+          backgroundColor: '#313366', // dark tooltip background
+          titleColor: '#C9DDE5',      // title light
+          bodyColor: '#C9DDE5',       // body light
           padding: 10,
           cornerRadius: 8,
           displayColors: false,
@@ -1781,30 +1781,34 @@ function createChart(ctx, label, data, color) {
           bodyFont: { size: 14 }
         }
       },
-
       scales: {
         x: {
           title: {
             display: true,
             text: 'Time (HH:MM)',
-            font: { size: 16 }
+            font: { size: 16 },
+            color: '#C9DDE5' // x-axis title light
           },
-          ticks: { font: { size: 14 } }
+          ticks: { font: { size: 14 }, color: '#C9DDE5' },
+          grid: { color: '#313366' } // x-axis grid lines
         },
         y: {
           title: {
             display: true,
             text: label,
-            font: { size: 16 }
+            font: { size: 16 },
+            color: '#C9DDE5' // y-axis title light
           },
-          ticks: { font: { size: 14 } }
+          ticks: { font: { size: 14 }, color: '#C9DDE5' },
+          grid: { color: '#313366' } // y-axis grid lines
         }
       }
     }
   });
 }
 
-createChart(document.getElementById('temperatureChart'), 'Temperature (°C)', temperature, '#FF5722');
-createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure, '#3F51B5');
-createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#4CAF50');
-createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFC107');
+// Dark-theme-friendly chart colors
+createChart(document.getElementById('temperatureChart'), 'Temperature (°C)', temperature, '#FFAB91'); // warm orange
+createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure, '#90CAF9'); // light blue
+createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#A5D6A7'); // light green
+createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFD54F'); // bright yellow
