@@ -7,21 +7,21 @@
 }
 
 body {
-  background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
-  color: #333;
+  background: #072633; /* very dark blue */
+  color: #C9DDE5; /* light bluish text */
   line-height: 1.6;
   overflow-x: hidden;
 }
 
 /* HEADER */
 header {
-  background: linear-gradient(90deg, #4f46e5, #6366f1);
-  color: white;
+  background: linear-gradient(90deg, #313366, #4D1C3F); /* dark gradient */
+  color: #C9DDE5;
   padding: 3rem 2rem;
   text-align: center;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.5);
   top: 0;
   z-index: 100;
 }
@@ -34,7 +34,7 @@ header h1 {
 header p {
   margin-top: 0.5rem;
   font-size: 1.2rem;
-  color: #ffffffaa;
+  color: #C9DDE5aa;
 }
 
 /* MAIN CONTENT */
@@ -46,15 +46,15 @@ main {
 
 /* OVERVIEW SECTIONS */
 .overview {
-  background: #ffffffdd;
+  background: #313366dd; /* dark bluish card */
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
 
 .overview h2 {
-  color: #4f46e5;
+  color: #C9DDE5;
   margin-bottom: 1rem;
 }
 
@@ -70,10 +70,10 @@ main {
 }
 
 .chart-container {
-  background: white;
+  background: #072633; /* very dark background */
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
   width: 100%;
   height: auto;
   overflow: visible;
@@ -88,7 +88,7 @@ canvas {
 /* Chart titles */
 .chart-container h2 {
   text-align: center;
-  color: #4f46e5;
+  color: #C9DDE5;
   margin-bottom: 1rem;
 }
 
@@ -96,17 +96,17 @@ canvas {
 footer {
   text-align: center;
   padding: 1.5rem;
-  background-color: #f0f4f8;
+  background-color: #313366; /* dark footer */
   margin-top: 3rem;
 }
 
 footer a {
-  color: #4f46e5;
+  color: #C9DDE5;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: #3b82f6;
+  color: #4D1C3F;
 }
 
 /* RESPONSIVE */
@@ -115,4 +115,3 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 }
-
