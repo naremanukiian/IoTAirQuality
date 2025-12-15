@@ -4,24 +4,26 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* smooth transitions for hover effects */
 }
 
 body {
-  background: #0D1117; /* dark background */
+  background: #0D1117; /* very dark background */
   color: #C9DDE5;      /* light text */
   line-height: 1.6;
-  min-height: 100vh;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* HEADER */
 header {
-  background: linear-gradient(90deg, #161B22, #0D1117); /* subtle gradient */
+  background: linear-gradient(90deg, #161B22, #0D1117);
   color: #58A6FF;
   padding: 3rem 2rem;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -31,6 +33,7 @@ header h1 {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 1px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 header p {
@@ -44,48 +47,50 @@ main {
   max-width: 1200px;
   margin: auto;
   padding: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
-/* MODERN GLASSMORPHISM CARDS */
-.card {
-  background: rgba(22, 27, 34, 0.85);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
+/* GLASSMORPHISM CARDS */
+.overview, .chart-container {
+  background: rgba(22, 27, 34, 0.85); /* semi-transparent dark card */
+  backdrop-filter: blur(10px); /* glass effect */
   padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-  border-left: 4px solid #58A6FF;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(88,166,255,0.2); /* subtle accent border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.overview:hover, .chart-container:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
 }
 
-.card h2 {
+.overview h2, .chart-container h2 {
   color: #58A6FF;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-weight: 600;
-  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.overview ul {
+  margin-left: 1.2rem;
+  color: #C9DDE5;
 }
 
 /* CHARTS */
-.chart-container {
-  position: relative;
-  height: 400px;
-  border-radius: 16px;
-  overflow: hidden;
+.charts-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
 canvas {
-  border-radius: 16px;
+  width: 100% !important;
+  height: 400px !important;
+  max-width: 100%;
 }
 
 /* FOOTER */
@@ -108,7 +113,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* BUTTONS */
+/* BUTTONS (optional) */
 button {
   background: #58A6FF;
   color: #0D1117;
@@ -126,20 +131,12 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* SCROLLBAR */
-*::-webkit-scrollbar {
-  width: 10px;
-}
-*::-webkit-scrollbar-track {
-  background: #0D1117;
-}
-*::-webkit-scrollbar-thumb {
-  background: #58A6FF;
-  border-radius: 5px;
-}
-
 /* RESPONSIVE */
 @media (max-width: 900px) {
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+
   header h1 {
     font-size: 2rem;
   }
@@ -147,4 +144,18 @@ button:hover {
   header p {
     font-size: 1rem;
   }
+}
+
+/* ADDITIONAL EFFECTS */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0D1117;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #58A6FF;
+  border-radius: 5px;
 }
