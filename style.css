@@ -7,8 +7,8 @@
 }
 
 body {
-  background: #C9DDE5; /* very dark blue */
-  color: #C9DDE5; /* light bluish text */
+  background: #313366; /* slightly lighter dark blue for contrast with cards */
+  color: #C9DDE5;      /* light text for readability */
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -70,7 +70,7 @@ main {
 }
 
 .chart-container {
-  background: #072633; /* very dark background */
+  background: #072633; /* same dark card background */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.5);
