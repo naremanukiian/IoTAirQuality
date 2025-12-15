@@ -1742,7 +1742,7 @@ function createChart(ctx, label, data, color) {
   return new Chart(ctx, {
     type: 'line',
     data: {
-      labels: timestamps,
+      labels: timestamps, // your time labels
       datasets: [{
         label: label,
         data: data,
@@ -1766,14 +1766,14 @@ function createChart(ctx, label, data, color) {
           position: 'top',
           labels: {
             font: { size: 16 },
-            color: '#C9DDE5' // legend text light
+            color: '#C9DDE5' // light legend text
           }
         },
         tooltip: {
           enabled: true,
-          backgroundColor: '#313366', // dark tooltip background
-          titleColor: '#C9DDE5',      // title light
-          bodyColor: '#C9DDE5',       // body light
+          backgroundColor: '#161B22', // matches card background
+          titleColor: '#C9DDE5',
+          bodyColor: '#C9DDE5',
           padding: 10,
           cornerRadius: 8,
           displayColors: false,
@@ -1787,30 +1787,30 @@ function createChart(ctx, label, data, color) {
             display: true,
             text: 'Time (HH:MM)',
             font: { size: 16 },
-            color: '#C9DDE5' // x-axis title light
+            color: '#C9DDE5'
           },
           ticks: { font: { size: 14 }, color: '#C9DDE5' },
-          grid: { color: '#313366' } // x-axis grid lines
+          grid: { color: 'rgba(75,108,183,0.4)' } // soft accent grid
         },
         y: {
           title: {
             display: true,
             text: label,
             font: { size: 16 },
-            color: '#C9DDE5' // y-axis title light
+            color: '#C9DDE5'
           },
           ticks: { font: { size: 14 }, color: '#C9DDE5' },
-          grid: { color: '#313366' } // y-axis grid lines
+          grid: { color: 'rgba(75,108,183,0.4)' } // soft accent grid
         }
-      }
+      },
+      animation: false, // improves performance
+      maintainAspectRatio: false
     }
   });
 }
 
 // Dark-theme-friendly chart colors
-// Dark-theme-friendly chart colors
-createChart(document.getElementById('temperatureChart'), 'Temperature (°C)', temperature, '#FF8A65'); // warm coral/orange
+createChart(document.getElementById('temperatureChart'), 'Temperature (°C)', temperature, '#FF8A65'); // coral/orange
 createChart(document.getElementById('pressureChart'), 'Pressure (hPa)', pressure, '#4B6CB7'); // accent blue
 createChart(document.getElementById('humidityChart'), 'Humidity (%)', humidity, '#81C784'); // mint green
 createChart(document.getElementById('altitudeChart'), 'Altitude (m)', altitude, '#FFD54F'); // golden yellow
-
