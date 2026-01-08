@@ -9,7 +9,7 @@
 ---
 
 ## 📝 Description
-A **solar-powered IoT device** that monitors over **10+ environmental parameters** and visualizes them in a **real-time web dashboard**.  
+A **solar-powered IoT device** that monitors over **10+ environmental parameters** and visualizes them in a **web dashboard**.  
 
 Developed in collaboration with **TumoLabs – ClimateNet** and **UFAR**, it ensures continuous operation and structured cloud storage for analytics.
 
